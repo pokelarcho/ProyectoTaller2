@@ -7,26 +7,83 @@ public class PlayerMagnet : MonoBehaviour
 
     public bool polo;
     public int distance;
-    // Start is called before the first frame update
+    public float atraccion;
+    public int direction;
+    Vector3 Dife;
+    RaycastHit2D hit;
+    Rigidbody2D monster;
+
     void Start()
     {
-        distance = 5;
+        Dife = new Vector3(3f, 0f, 0f);
+        direction = 1;
     }
 
-    // Update is called once per frame
     void Update()
     {
-
-        if (Input.GetKeyDown(KeyCode.L))
+        DetDirection();
+        DetMag();
+        DetPolo();
+        Magnetismo();
+    }
+    // 1 es derecha
+    // -1 es izquierda
+    void DetDirection()
+    {
+        float x = Input.GetAxis("Horizontal");
+        if (x > 0)
         {
-
-            RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.right, distance);
-            Debug.DrawRay(transform.position, Vector3.down * 2, Color.green, Time.fixedDeltaTime);
-
-            if (hit.collider != null) 
-                Debug.Log("ENCONTRO ENEMIGOssssssss");
-            else
-                Debug.Log("ENCONTRO NADA");
+            direction = 1;
+        }
+        else if (x < 0)
+        {
+            direction = -1;
+        }
+    }
+    void DetMag()
+    {
+        if (direction == 1)
+        {
+            hit = Physics2D.Raycast(transform.position + Dife, Vector2.right, distance);
+            Debug.DrawRay(transform.position + Dife, Vector2.right * distance, Color.green, Time.fixedDeltaTime);
+        }
+        else if (direction == -1)
+        {
+            hit = Physics2D.Raycast(transform.position - Dife, Vector2.left, distance);
+            Debug.DrawRay(transform.position - Dife, Vector2.left * distance, Color.green, Time.fixedDeltaTime);
+        }
+    }
+    //true es positivo
+    //false es negativo
+    void DetPolo()
+    {
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            if (polo)
+            {
+                polo = false;
+            }
+            else if (polo == false)
+            {
+                polo = true;
+            }
+        }
+    }
+    void Magnetismo()
+    {
+        if (Input.GetKeyDown(KeyCode.L)) {
+            if (hit.collider != null && hit.collider.tag == "Enemy") { }
+            {
+                monster = hit.transform.GetComponent<Rigidbody2D>();
+                if (direction == 1 && polo || direction == -1 && polo == false)
+                {
+                    monster.velocity = new Vector2(atraccion, 0f);
+                }
+                if (direction == -1 && polo || direction == 1 && polo == false)
+                {
+                    monster.velocity = new Vector2(atraccion * -1, 0f);
+                }
+            }
         }
     }
 }

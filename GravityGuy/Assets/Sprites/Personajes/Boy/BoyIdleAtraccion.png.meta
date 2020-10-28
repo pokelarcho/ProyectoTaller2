@@ -1,0 +1,611 @@
+fileFormatVersion: 2
+guid: 499a3abc439832d4089abf9d6c6f5e23
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -759114352593383021
+    second: BoyIdleAtraccion_0
+  - first:
+      213: 2978193660708621348
+    second: BoyIdleAtraccion_1
+  - first:
+      213: -6585743019436827632
+    second: BoyIdleAtraccion_2
+  - first:
+      213: 8181507863656141357
+    second: BoyIdleAtraccion_3
+  - first:
+      213: -6892289297036216924
+    second: BoyIdleAtraccion_4
+  - first:
+      213: -3882691794248399472
+    second: BoyIdleAtraccion_5
+  - first:
+      213: 3621014202082906013
+    second: BoyIdleAtraccion_6
+  - first:
+      213: 3152150051733182652
+    second: BoyIdleAtraccion_7
+  - first:
+      213: -4129705667830273599
+    second: BoyIdleAtraccion_8
+  - first:
+      213: -1451456271750995917
+    second: BoyIdleAtraccion_9
+  - first:
+      213: 5909312723622146160
+    second: BoyIdleAtraccion_10
+  - first:
+      213: -3397221240743480798
+    second: BoyIdleAtraccion_11
+  - first:
+      213: 7438945889120382535
+    second: BoyIdleAtraccion_12
+  - first:
+      213: -1226044310582465333
+    second: BoyIdleAtraccion_13
+  - first:
+      213: -8876876977543327515
+    second: BoyIdleAtraccion_0
+  - first:
+      213: -4556904634617256558
+    second: BoyIdleAtraccion_1
+  - first:
+      213: -212356229902919472
+    second: BoyIdleAtraccion_2
+  - first:
+      213: -7683727960840149502
+    second: BoyIdleAtraccion_3
+  - first:
+      213: -371275398679092940
+    second: BoyIdleAtraccion_4
+  - first:
+      213: 2645162822162517887
+    second: BoyIdleAtraccion_5
+  - first:
+      213: -4337835163515696603
+    second: BoyIdleAtraccion_6
+  - first:
+      213: 1578281802372375011
+    second: BoyIdleAtraccion_7
+  - first:
+      213: 8159330091210880856
+    second: BoyIdleAtraccion_8
+  - first:
+      213: -3138038052312760951
+    second: BoyIdleAtraccion_9
+  - first:
+      213: 6703690961711752032
+    second: BoyIdleAtraccion_10
+  - first:
+      213: 1832974091076180609
+    second: BoyIdleAtraccion_11
+  - first:
+      213: 3295712058948216116
+    second: BoyIdleAtraccion_12
+  - first:
+      213: -4706002024909458607
+    second: BoyIdleAtraccion_13
+  - first:
+      213: 5397179680252699545
+    second: BoyIdleAtraccion_14
+  - first:
+      213: 7665825274136985670
+    second: BoyIdleAtraccion_15
+  - first:
+      213: 2512356727287027992
+    second: BoyIdleAtraccion_16
+  - first:
+      213: -8344477238812838936
+    second: BoyIdleAtraccion_17
+  - first:
+      213: 6597208161517434081
+    second: BoyIdleAtraccion_18
+  - first:
+      213: -81502845737479546
+    second: BoyIdleAtraccion_19
+  - first:
+      213: 5696001749425154035
+    second: BoyIdleAtraccion_20
+  - first:
+      213: 4234899548585437736
+    second: BoyIdleAtraccion_21
+  - first:
+      213: -2954012947921251423
+    second: BoyIdleAtraccion_22
+  - first:
+      213: 5990612537074442055
+    second: BoyIdleAtraccion_23
+  - first:
+      213: 2512900252240304758
+    second: BoyIdleAtraccion_24
+  - first:
+      213: -6772317560695599339
+    second: BoyIdleAtraccion_25
+  - first:
+      213: 5674403976441762831
+    second: BoyIdleAtraccion_26
+  - first:
+      213: 5554114867359833876
+    second: BoyIdleAtraccion_27
+  - first:
+      213: -1628641206083517630
+    second: BoyIdleAtraccion_28
+  - first:
+      213: 8748296670637579594
+    second: BoyIdleAtraccion_29
+  - first:
+      213: -6498589671320151330
+    second: BoyIdleAtraccion_30
+  - first:
+      213: -348233726756356116
+    second: BoyIdleAtraccion_31
+  - first:
+      213: 1431276859979883834
+    second: BoyIdleAtraccion_32
+  - first:
+      213: -8951291309777839131
+    second: BoyIdleAtraccion_33
+  - first:
+      213: 5830262834206073576
+    second: BoyIdleAtraccion_34
+  - first:
+      213: -5881687248638593061
+    second: BoyIdleAtraccion_35
+  - first:
+      213: -7996375168763169747
+    second: BoyIdleAtraccion_36
+  - first:
+      213: 8587747671995400380
+    second: BoyIdleAtraccion_37
+  - first:
+      213: 5002099871942059532
+    second: BoyIdleAtraccion_38
+  - first:
+      213: 3879344914699775879
+    second: BoyIdleAtraccion_39
+  - first:
+      213: 765891248335479189
+    second: BoyIdleAtraccion_40
+  - first:
+      213: 6698658485798094877
+    second: BoyIdleAtraccion_41
+  - first:
+      213: -4993700491704470019
+    second: BoyIdleAtraccion_42
+  - first:
+      213: 5224985726265562893
+    second: BoyIdleAtraccion_43
+  - first:
+      213: -8473324015805440074
+    second: BoyIdleAtraccion_44
+  - first:
+      213: -9380681393857682
+    second: BoyIdleAtraccion_45
+  - first:
+      213: -7064261821644578546
+    second: BoyIdleAtraccion_46
+  - first:
+      213: 39362824954630606
+    second: BoyIdleAtraccion_47
+  - first:
+      213: -9156779799607329258
+    second: BoyIdleAtraccion_48
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: BoyIdleAtraccion_0
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 19
+        width: 35
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e0dfaeab6ffec480800000000000000
+      internalID: -8876876977543327515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BoyIdleAtraccion_1
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 19
+        width: 35
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 295ae4ad06f92c0c0800000000000000
+      internalID: -4556904634617256558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BoyIdleAtraccion_2
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 19
+        width: 35
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d89bce422f8d0df0800000000000000
+      internalID: -212356229902919472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BoyIdleAtraccion_3
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 19
+        width: 35
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 206e267312aed5590800000000000000
+      internalID: -7683727960840149502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BoyIdleAtraccion_4
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 19
+        width: 35
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43124e3fdf6f8daf0800000000000000
+      internalID: -371275398679092940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BoyIdleAtraccion_5
+      rect:
+        serializedVersion: 2
+        x: 692
+        y: 19
+        width: 35
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7f0114729185b420800000000000000
+      internalID: 2645162822162517887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BoyIdleAtraccion_6
+      rect:
+        serializedVersion: 2
+        x: 820
+        y: 19
+        width: 35
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52ac270d6e9ecc3c0800000000000000
+      internalID: -4337835163515696603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BoyIdleAtraccion_7
+      rect:
+        serializedVersion: 2
+        x: 948
+        y: 19
+        width: 35
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e16ed9efee27e510800000000000000
+      internalID: 1578281802372375011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BoyIdleAtraccion_8
+      rect:
+        serializedVersion: 2
+        x: 1076
+        y: 19
+        width: 35
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 857b7cbec73cb3170800000000000000
+      internalID: 8159330091210880856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BoyIdleAtraccion_9
+      rect:
+        serializedVersion: 2
+        x: 1204
+        y: 19
+        width: 35
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98d3d3874037374d0800000000000000
+      internalID: -3138038052312760951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BoyIdleAtraccion_10
+      rect:
+        serializedVersion: 2
+        x: 1332
+        y: 19
+        width: 35
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06363d8796b480d50800000000000000
+      internalID: 6703690961711752032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BoyIdleAtraccion_11
+      rect:
+        serializedVersion: 2
+        x: 1460
+        y: 19
+        width: 35
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18a171d6938007910800000000000000
+      internalID: 1832974091076180609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BoyIdleAtraccion_12
+      rect:
+        serializedVersion: 2
+        x: 1588
+        y: 19
+        width: 35
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 435649bf7a8bcbd20800000000000000
+      internalID: 3295712058948216116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BoyIdleAtraccion_13
+      rect:
+        serializedVersion: 2
+        x: 1716
+        y: 19
+        width: 35
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 153b001871ce0beb0800000000000000
+      internalID: -4706002024909458607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

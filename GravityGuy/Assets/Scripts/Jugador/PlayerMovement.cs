@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-//using DG.Tweening;
+using DG.Tweening;
+using PowerTools;
 
 
 public class PlayerMovement : MonoBehaviour
@@ -13,9 +14,10 @@ public class PlayerMovement : MonoBehaviour
     private Collision coll;
     [HideInInspector]
     public Rigidbody2D rb;
-    //private AnimationScript anim;
+    private AnimationScript anim;
+    public SpriteRenderer sp;
 
-    
+
 
     [Space]
     [Header("Stats")]
@@ -34,6 +36,7 @@ public class PlayerMovement : MonoBehaviour
     public bool wallSlide;
     public bool isDashing;
     public bool grounded;
+    public bool vertigo;
     
     
     [Space]
@@ -44,31 +47,27 @@ public class PlayerMovement : MonoBehaviour
     public int side = 1;
 
 
-    /*
+    
     [Space]
     [Header("Polish")]
     public ParticleSystem dashParticle;
     public ParticleSystem jumpParticle;
-    public ParticleSystem wallJumpParticle;
-    public ParticleSystem slideParticle;*/
-
+    
 
     // Start is called before the first frame update
     void Start()
     {
         coll = GetComponent<Collision>();
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponentInChildren<AnimationScript>();
+        sp = GetComponentInChildren<SpriteRenderer>();
 
-        //anim = GetComponentInChildren<AnimationScript>();
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-        //mirar();
-        //Jump();
-
 
         float x = Input.GetAxis("Horizontal");
         float y = Input.GetAxis("Vertical");
@@ -77,27 +76,23 @@ public class PlayerMovement : MonoBehaviour
         Vector2 dir = new Vector2(x, y);
 
         Walk(dir);
-        // anim.SetHorizontalMovement(x, y, rb.velocity.y);
 
-        if (coll.onGround && !isDashing)
+        anim.SetHorizontalMovement(x, y, rb.velocity.y, vertigo);
+
+        if (grounded && !isDashing)
         {
             wallJumped = false;
             GetComponent<BetterJumping>().enabled = true;
         }
-
-       
-    
-   
+        
 
         if (Input.GetButtonDown("Jump"))
         {
             //anim.SetTrigger("jump");
 
-            if (coll.onGround)
-                Jump(Vector2.up, false);
-            /*if (coll.onWall && !coll.onGround)
-                WallJump();*/
-        }
+            if (grounded)
+                Jump(Vector2.up);
+            }
 
 
         //DASH
@@ -107,25 +102,21 @@ public class PlayerMovement : MonoBehaviour
                 Dash(xRaw, yRaw);
         }
 
-        if (coll.onGround && !groundTouch)
+        if (grounded && !groundTouch)
         {
             GroundTouch();
             groundTouch = true;
         }
 
-        if (!coll.onGround && groundTouch)
+        if (!grounded && groundTouch)
         {
             groundTouch = false;
         }
 
-        //WallParticle(y);
 
-        if (wallGrab || wallSlide || !canMove)
-            return;
 
-        /* animacion
-         * 
-         * if (x > 0)
+
+       if (x > 0)
          {
              side = 1;
              anim.Flip(side);
@@ -135,24 +126,17 @@ public class PlayerMovement : MonoBehaviour
              side = -1;
              anim.Flip(side);
          }
-        */
+        
 
-
-      
-    }
-
-
-    void gravityinverted(bool vertigo) {
-        //Gravedad Invertida
 
         if (vertigo == true)
         {
-            coll.onVertigo = true;
+            
             rb.gravityScale = -20;
-            coll.bottomOffset.y =  1.6f;
-            transform.Rotate(new Vector3(180, 0, 0));
-            //GetComponent<SpriteRenderer>().flipY = true;
-
+            GetComponent<BetterJumping>().enabled = false;
+            //transform.Rotate(new Vector3(180, 0, 0));
+            sp.flipY = true;
+            
             /* if (Cam)
              {
                  CamPlay.GetComponent<Transform>().position = new Vector3(Camo.x, Camo.y, 10f);
@@ -160,12 +144,10 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            coll.onVertigo = false;
-            rb.gravityScale = 20;
             
-            coll.bottomOffset.y = -1.6f;
-            transform.Rotate(new Vector3(180, 0, 0));
-            //GetComponent<SpriteRenderer>().flipY = false;
+            rb.gravityScale = 20;
+            GetComponent<BetterJumping>().enabled = false;
+            sp.flipY = false;
 
             /* if (Cam)
              {
@@ -182,16 +164,16 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.CompareTag("Bala"))
         {
             isDashing = true;
-            if (coll.onVertigo)
+            if (vertigo)
             {
                 
-                 gravityinverted(false);
+                 vertigo = false;
                 
             }
             else
             {
                 
-                gravityinverted(true);
+                vertigo = true;
 
             }
 
@@ -201,33 +183,49 @@ public class PlayerMovement : MonoBehaviour
         {
 
 
-            gravityinverted(true);
+            vertigo = true;
 
 
         }
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            grounded = true;
+            isDashing = false;
+
+        }
+
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            grounded = false;
+
+        }
+    }
+
+
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Vertigo"))
+       if (collision.gameObject.CompareTag("Vertigo"))
         {
-
-           
-                gravityinverted(false);
-
-           
-
+            vertigo = false;
         }
     }
 
 
-
-    private void Jump(Vector2 dir, bool wall)
+    private void Jump(Vector2 dir)
     {
-        /* slideParticle.transform.parent.localScale = new Vector3(ParticleSide(), 1, 1);
-         ParticleSystem particle = wall ? wallJumpParticle : jumpParticle;*/
+        
+         ParticleSystem particle = jumpParticle;
 
-        if (coll.onVertigo)
+        if (vertigo)
         {
             rb.velocity = new Vector2(rb.velocity.x, 0);
             rb.velocity += dir * jumpForce * -1;
@@ -238,7 +236,7 @@ public class PlayerMovement : MonoBehaviour
             rb.velocity += dir * jumpForce;
         }
 
-       // particle.Play();
+       particle.Play();
     }
 
     private void Walk(Vector2 dir)
@@ -269,9 +267,9 @@ public class PlayerMovement : MonoBehaviour
         hasDashed = false;
         isDashing = false;
 
-     /*   side = anim.sr.flipX ? -1 : 1;
+       side = anim.sr.flipX ? -1 : 1;
      
-        jumpParticle.Play();*/
+        jumpParticle.Play();
     }
 
 
@@ -286,10 +284,10 @@ public class PlayerMovement : MonoBehaviour
 
     private void Dash(float x, float y)
     {
-     /*   Camera.main.transform.DOComplete();
-        Camera.main.transform.DOShakePosition(.2f, .5f, 14, 90, false, true);
-        FindObjectOfType<RippleEffect>().Emit(Camera.main.WorldToViewportPoint(transform.position));
-     */
+      Camera.main.transform.DOComplete();
+      Camera.main.transform.DOShakePosition(.2f, .5f, 14, 90, false, true);
+        //FindObjectOfType<RippleEffect>().Emit(Camera.main.WorldToViewportPoint(transform.position));
+     
         hasDashed = true;
 
         // anim.SetTrigger("dash");
@@ -309,27 +307,28 @@ public class PlayerMovement : MonoBehaviour
 
     IEnumerator DashWait()
     {
-       // FindObjectOfType<GhostTrail>().ShowGhost();
+       FindObjectOfType<GhostTrail>().ShowGhost();
         StartCoroutine(GroundDash());
-        // DOVirtual.Float(14, 0, .8f, RigidbodyDrag);
+        DOVirtual.Float(14, 0, .8f, RigidbodyDrag);
 
-        //dashParticle.Play();
-        if (coll.onVertigo)
+        dashParticle.Play();
+       /* if (coll.onVertigo)
             rb.gravityScale = -1;
         else
             rb.gravityScale = 1;
-        
+        */
         GetComponent<BetterJumping>().enabled = false;
         
         isDashing = true;
 
         yield return new WaitForSeconds(.3f);
 
-        //dashParticle.Stop();
-        if(coll.onVertigo)
+        dashParticle.Stop();
+        /*if(coll.onVertigo)
             rb.gravityScale = -20;
         else
             rb.gravityScale = 20;
+        */
         GetComponent<BetterJumping>().enabled = true;
         
         isDashing = false;
@@ -339,7 +338,7 @@ public class PlayerMovement : MonoBehaviour
     IEnumerator GroundDash()
     {
         yield return new WaitForSeconds(.15f);
-        if (coll.onGround)
+        if (grounded)
             hasDashed = false;
     }
 
