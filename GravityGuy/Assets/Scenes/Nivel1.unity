@@ -5410,8 +5410,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   polo: 1
-  distance: 7
-  atraccion: 300
+  distance: 10
+  atraccion: 1
   direction: 1
 --- !u!61 &463593940
 BoxCollider2D:
@@ -5800,7 +5800,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8730bf39abd25e4458e5f2c6ebd4d3eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TipoPolo: 0
+  polo: 0
 --- !u!114 &667518750
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11391,7 +11391,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8730bf39abd25e4458e5f2c6ebd4d3eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TipoPolo: 1
+  polo: 0
 --- !u!1 &1360801284
 GameObject:
   m_ObjectHideFlags: 0

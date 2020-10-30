@@ -11,11 +11,11 @@ public class PlayerMagnet : MonoBehaviour
     public int direction;
     Vector3 Dife;
     RaycastHit2D hit;
-    Rigidbody2D monster;
+    Transform monster;
 
     void Start()
     {
-        Dife = new Vector3(3f, 0f, 0f);
+        Dife = new Vector3(1f, 0f, 0f);
         direction = 1;
     }
 
@@ -23,8 +23,15 @@ public class PlayerMagnet : MonoBehaviour
     {
         DetDirection();
         DetMag();
-        DetPolo();
-        Magnetismo();
+        if (Input.GetKey(KeyCode.L))
+        {
+            Magnetismo();
+            
+        }
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            DetPolo();
+        }
     }
     // 1 es derecha
     // -1 es izquierda
@@ -57,33 +64,48 @@ public class PlayerMagnet : MonoBehaviour
     //false es negativo
     void DetPolo()
     {
-        if (Input.GetKeyDown(KeyCode.K))
+        if (polo)
         {
-            if (polo)
-            {
-                polo = false;
-            }
-            else if (polo == false)
-            {
-                polo = true;
-            }
+            polo = false;
+        }
+        else if (polo == false)
+        {
+            polo = true;
         }
     }
     void Magnetismo()
     {
-        if (Input.GetKeyDown(KeyCode.L)) {
-            if (hit.collider != null && hit.collider.tag == "Enemy") { }
+        if (hit.collider != null && hit.collider.GetComponent<PoleType>())
+        {
+            if (hit.collider.GetComponent<PoleType>().polo == true)
             {
-                monster = hit.transform.GetComponent<Rigidbody2D>();
-                if (direction == 1 && polo || direction == -1 && polo == false)
+                monster = hit.transform.GetComponent<Transform>();
+                if (Detatrac())
                 {
-                    monster.velocity = new Vector2(atraccion, 0f);
+                    monster.position = new Vector2(monster.position.x + atraccion, monster.position.y);
                 }
-                if (direction == -1 && polo || direction == 1 && polo == false)
+                else
                 {
-                    monster.velocity = new Vector2(atraccion * -1, 0f);
+                    monster.position = new Vector2(monster.position.x + (atraccion * -1), monster.position.y);
+                }
+            }
+            else if (hit.collider.GetComponent<PoleType>().polo == false)
+            {
+                monster = hit.transform.GetComponent<Transform>();
+                if (Detatrac())
+                {
+                    monster.position = new Vector2(monster.position.x + atraccion, monster.position.y);
+                }
+                else
+                {
+                    monster.position = new Vector2(monster.position.x + (atraccion * -1), monster.position.y);
                 }
             }
         }
     }
+    bool Detatrac()
+    {
+        return direction == 1 && polo || direction == -1 && polo == false;
+    }
+
 }
