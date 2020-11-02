@@ -6,14 +6,13 @@ using PowerTools;
 public class Patrulla : MonoBehaviour
 {
     private Rigidbody2D rb2d;
-    private SpriteRenderer sp;
+
     public AnimationClip animRun;
     public AnimationClip animIdle;
     public float speed;
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
-        sp = GetComponent<SpriteRenderer>();
         
     }
 

@@ -7,6 +7,7 @@ public class Poff : MonoBehaviour
 
     public float speed = -20f;
     public Rigidbody2D rb;
+    public CircleCollider2D cc;
     private float counter;
     // Start is called before the first frame update
     void Start()
@@ -22,16 +23,13 @@ public class Poff : MonoBehaviour
     {
         counter += Time.deltaTime;
 
-        if (counter >= 3.5f)
+        if (counter >= 2f)
             Destroy(gameObject);
 
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            Destroy(gameObject);
-        }
+        
     }
 }

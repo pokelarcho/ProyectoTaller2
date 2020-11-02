@@ -133,7 +133,7 @@ public class PlayerMovement : MonoBehaviour
         {
             
             rb.gravityScale = -20;
-            GetComponent<BetterJumping>().enabled = false;
+            
             //transform.Rotate(new Vector3(180, 0, 0));
             sp.flipY = true;
             
@@ -146,7 +146,7 @@ public class PlayerMovement : MonoBehaviour
         {
             
             rb.gravityScale = 20;
-            GetComponent<BetterJumping>().enabled = false;
+            
             sp.flipY = false;
 
             /* if (Cam)
@@ -312,11 +312,11 @@ public class PlayerMovement : MonoBehaviour
         DOVirtual.Float(14, 0, .8f, RigidbodyDrag);
 
         dashParticle.Play();
-       /* if (coll.onVertigo)
+        if (vertigo)
             rb.gravityScale = -1;
         else
             rb.gravityScale = 1;
-        */
+        
         GetComponent<BetterJumping>().enabled = false;
         
         isDashing = true;
@@ -324,11 +324,11 @@ public class PlayerMovement : MonoBehaviour
         yield return new WaitForSeconds(.3f);
 
         dashParticle.Stop();
-        /*if(coll.onVertigo)
+        if(vertigo)
             rb.gravityScale = -20;
         else
             rb.gravityScale = 20;
-        */
+        
         GetComponent<BetterJumping>().enabled = true;
         
         isDashing = false;

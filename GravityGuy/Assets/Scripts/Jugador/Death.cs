@@ -78,6 +78,7 @@ public class Death : MonoBehaviour
         yield return new WaitForSeconds(time);
         PM.canMove = true;
         PM.rb.transform.position = Checkpoint;
+        PM.vertigo = false;
     }
 
 }

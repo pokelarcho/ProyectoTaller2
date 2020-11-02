@@ -10,23 +10,25 @@ public class PlayerMagnet : MonoBehaviour
     public float atraccion;
     public int direction;
     Vector3 Dife;
+    Vector3 DetEnt;
     RaycastHit2D hit;
+    RaycastHit2D hit2;
     Transform monster;
 
     void Start()
     {
-        Dife = new Vector3(1f, 0f, 0f);
+        Dife = new Vector3(10f, 0f, 0f);
+        DetEnt = new Vector3(7f, 0f, 0f);
         direction = 1;
     }
 
     void Update()
     {
         DetDirection();
-        DetMag();
         if (Input.GetKey(KeyCode.L))
         {
             Magnetismo();
-            
+            DetMag();
         }
         if (Input.GetKeyDown(KeyCode.K))
         {
@@ -35,6 +37,19 @@ public class PlayerMagnet : MonoBehaviour
     }
     // 1 es derecha
     // -1 es izquierda
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        if (direction == 1)
+        {
+            Gizmos.DrawSphere(transform.position + DetEnt, 1);
+        }
+        else
+        {
+            Gizmos.DrawSphere(transform.position + (DetEnt * -1), 1);
+        }
+
+    }
     void DetDirection()
     {
         float x = Input.GetAxis("Horizontal");
@@ -51,11 +66,14 @@ public class PlayerMagnet : MonoBehaviour
     {
         if (direction == 1)
         {
+            hit2 = Physics2D.CircleCast(transform.position + DetEnt, 1, new Vector2(0f, 0f));
             hit = Physics2D.Raycast(transform.position + Dife, Vector2.right, distance);
             Debug.DrawRay(transform.position + Dife, Vector2.right * distance, Color.green, Time.fixedDeltaTime);
+
         }
-        else if (direction == -1)
+        else
         {
+            hit2 = Physics2D.CircleCast(transform.position + (DetEnt * -1), 1, new Vector2(0f, 0f));
             hit = Physics2D.Raycast(transform.position - Dife, Vector2.left, distance);
             Debug.DrawRay(transform.position - Dife, Vector2.left * distance, Color.green, Time.fixedDeltaTime);
         }
@@ -75,6 +93,32 @@ public class PlayerMagnet : MonoBehaviour
     }
     void Magnetismo()
     {
+        if (hit2.collider != null && hit2.collider.GetComponent<PoleType>())
+        {
+            monster = hit2.transform.GetComponent<Transform>();
+            if (hit2.collider.GetComponent<PoleType>().polo == true)
+            {
+                if (Detatrac())
+                {
+                    monster.position = transform.position + new Vector3(-7f, 1f, 0f);
+                }
+                else
+                {
+                    monster.position = transform.position + new Vector3(7f, 1f, 0f);
+                }
+            }
+            else if (hit2.collider.GetComponent<PoleType>().polo == false)
+            {
+                if (Detatrac())
+                {
+                    monster.position = transform.position + new Vector3(-7f, 1f, 0f);
+                }
+                else
+                {
+                    monster.position = transform.position + new Vector3(7f, 1f, 0f);
+                }
+            }
+        }
         if (hit.collider != null && hit.collider.GetComponent<PoleType>())
         {
             if (hit.collider.GetComponent<PoleType>().polo == true)
