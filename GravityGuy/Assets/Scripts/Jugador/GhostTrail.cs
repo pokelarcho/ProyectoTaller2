@@ -1,9 +1,11 @@
 ﻿using UnityEngine;
 using DG.Tweening;
 
+
 public class GhostTrail : MonoBehaviour
 {
     private PlayerMovement move;
+
     private AnimationScript anim;
     private SpriteRenderer sr;
     public Transform ghostsParent;
@@ -11,13 +13,34 @@ public class GhostTrail : MonoBehaviour
     public Color fadeColor;
     public float ghostInterval;
     public float fadeTime;
+    private GameObject PlayerBoy;
+    private PlayerMovement cs;
+  
+
 
     private void Start()
     {
         anim = FindObjectOfType<AnimationScript>();
         move = FindObjectOfType<PlayerMovement>();
         sr = GetComponent<SpriteRenderer>();
+        //Llamar a un objeto muy parte de este
+        PlayerBoy = GameObject.Find("PlayerBoy");
+        cs = PlayerBoy.GetComponent<PlayerMovement>();
     }
+    private void Update()
+    {
+        Debug.Log(cs.vertigo);
+
+        if(cs.vertigo == true)
+            ghostsParent.SetScaleY(-1);
+        else
+            ghostsParent.SetScaleY(1);
+    }
+
+
+
+
+
 
     public void ShowGhost()
     {

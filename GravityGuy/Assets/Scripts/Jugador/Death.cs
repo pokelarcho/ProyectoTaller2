@@ -14,10 +14,10 @@ public class Death : MonoBehaviour
     void Start()
     {
         PM = GetComponent<PlayerMovement>();
-       
+
         //creacion de CheckPoint
         Checkpoint = transform.position;
-        
+
 
     }
 
@@ -26,8 +26,8 @@ public class Death : MonoBehaviour
     {
 
 
-        
-            
+
+
     }
 
 
@@ -50,6 +50,8 @@ public class Death : MonoBehaviour
 
 
         }
+
+
     }
 
         private void OnTriggerEnter2D(Collider2D collision)
@@ -58,7 +60,15 @@ public class Death : MonoBehaviour
             {
                 Checkpoint = transform.position;
             }
+
+        if (collision.gameObject.CompareTag("Lives"))
+        {
+            lives++;
+
+
+
         }
+    }
 
 
 

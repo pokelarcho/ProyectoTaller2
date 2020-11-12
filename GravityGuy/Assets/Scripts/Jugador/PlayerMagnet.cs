@@ -96,7 +96,7 @@ public class PlayerMagnet : MonoBehaviour
         if (hit2.collider != null && hit2.collider.GetComponent<PoleType>())
         {
             monster = hit2.transform.GetComponent<Transform>();
-            if (hit2.collider.GetComponent<PoleType>().polo == true)
+            if (hit2.collider.GetComponent<PoleType>().polo == true && polo)
             {
                 if (Detatrac())
                 {
@@ -107,7 +107,7 @@ public class PlayerMagnet : MonoBehaviour
                     monster.position = transform.position + new Vector3(7f, 1f, 0f);
                 }
             }
-            else if (hit2.collider.GetComponent<PoleType>().polo == false)
+            else if (hit2.collider.GetComponent<PoleType>().polo == false && polo == false)
             {
                 if (Detatrac())
                 {
