@@ -73,7 +73,7 @@ public class PlayerMovement : MonoBehaviour
         float y = Input.GetAxis("Vertical");
         float xRaw = Input.GetAxisRaw("Horizontal");
         float yRaw = Input.GetAxisRaw("Vertical");
-        Vector2 dir = new Vector2(x, y);
+        Vector2 dir = new Vector2(xRaw, yRaw);
 
         Walk(dir);
 
@@ -88,11 +88,14 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetButtonDown("Jump"))
         {
-            //anim.SetTrigger("jump");
+
 
             if (grounded)
+            {
                 Jump(Vector2.up);
+                anim.SetTrigger("jump");
             }
+        }
 
 
         //DASH
@@ -126,16 +129,18 @@ public class PlayerMovement : MonoBehaviour
              side = -1;
              anim.Flip(side);
          }
-        
 
 
+        float scalay = transform.GetScaleY();
         if (vertigo == true)
         {
             
-            rb.gravityScale = -20;
-            
+            rb.gravityScale = -10;
+
             //transform.Rotate(new Vector3(180, 0, 0));
-            sp.flipY = true;
+            //sp.flipY = true;
+            
+            transform.SetScaleY(-1 * Mathf.Abs(scalay));
             
             /* if (Cam)
              {
@@ -144,10 +149,10 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            
-            rb.gravityScale = 20;
-            
-            sp.flipY = false;
+
+            rb.gravityScale = 10;
+
+            transform.SetScaleY(1 * Mathf.Abs(scalay));
 
             /* if (Cam)
              {
@@ -290,7 +295,7 @@ public class PlayerMovement : MonoBehaviour
      
         hasDashed = true;
 
-        // anim.SetTrigger("dash");
+         anim.SetTrigger("dash");
         
         StartCoroutine(DisableMovement(.2f));
         rb.velocity = Vector2.zero;

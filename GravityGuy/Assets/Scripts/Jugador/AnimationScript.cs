@@ -15,11 +15,8 @@ public class AnimationScript : MonoBehaviour
     {
 
         anim = GetComponent<Animator>();
-        
         move = GetComponentInParent<PlayerMovement>();
         sr = GetComponent<SpriteRenderer>();
-        
-
     }
 
     // Update is called once per frame
@@ -51,9 +48,6 @@ public class AnimationScript : MonoBehaviour
 
     public void Flip(int side)
     {
-
-        
-
         bool state = (side == 1) ? false : true;
         sr.flipX = state;
     }

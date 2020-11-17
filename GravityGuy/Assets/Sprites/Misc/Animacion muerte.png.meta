@@ -1,7 +1,139 @@
 fileFormatVersion: 2
 guid: e2ee9e109a0843744ba6bee4404b477d
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -3272220236181044460
+    second: Animacion muerte_0
+  - first:
+      213: -4649434436836985541
+    second: Animacion muerte_1
+  - first:
+      213: -8563304053909127066
+    second: Animacion muerte_2
+  - first:
+      213: 353062425197916960
+    second: Animacion muerte_3
+  - first:
+      213: 6940669792535949890
+    second: Animacion muerte_4
+  - first:
+      213: -5288814463284218910
+    second: Animacion muerte_5
+  - first:
+      213: 1128299307874361647
+    second: Animacion muerte_6
+  - first:
+      213: 6173136156916796713
+    second: Animacion muerte_7
+  - first:
+      213: 3452823281159015697
+    second: Animacion muerte_8
+  - first:
+      213: -5239264838681630086
+    second: Animacion muerte_9
+  - first:
+      213: -7986090220902268050
+    second: Animacion muerte_10
+  - first:
+      213: 1638887101804552434
+    second: Animacion muerte_11
+  - first:
+      213: -3891969660388564954
+    second: Animacion muerte_12
+  - first:
+      213: 1937088637910375454
+    second: Animacion muerte_13
+  - first:
+      213: 8816520456324864558
+    second: Animacion muerte_14
+  - first:
+      213: -1456047249191333549
+    second: Animacion muerte_15
+  - first:
+      213: -8148623072057751173
+    second: Animacion muerte_16
+  - first:
+      213: -2326775425778915135
+    second: Animacion muerte_17
+  - first:
+      213: -6274297204337657979
+    second: Animacion muerte_18
+  - first:
+      213: 3712375302679871317
+    second: Animacion muerte_19
+  - first:
+      213: -3190883537246221117
+    second: Animacion muerte_20
+  - first:
+      213: 3097787721591401096
+    second: Animacion muerte_21
+  - first:
+      213: 4264754952381200221
+    second: Animacion muerte_22
+  - first:
+      213: 3351740934188602029
+    second: Animacion muerte_23
+  - first:
+      213: 1571525865611364299
+    second: Animacion muerte_24
+  - first:
+      213: -8078566156336823694
+    second: Animacion muerte_25
+  - first:
+      213: 2466107963188929920
+    second: Animacion muerte_26
+  - first:
+      213: 8351378567823482277
+    second: Animacion muerte_27
+  - first:
+      213: 4431196343425826085
+    second: Animacion muerte_28
+  - first:
+      213: -1464303498608296153
+    second: Animacion muerte_29
+  - first:
+      213: 8208020123620105992
+    second: Animacion muerte_30
+  - first:
+      213: 2664148173747345030
+    second: Animacion muerte_31
+  - first:
+      213: 4830901250010715971
+    second: Animacion muerte_32
+  - first:
+      213: 1781211871892636663
+    second: Animacion muerte_33
+  - first:
+      213: -8597255365795120127
+    second: Animacion muerte_34
+  - first:
+      213: 6411238177756678425
+    second: Animacion muerte_35
+  - first:
+      213: 7361873972582075785
+    second: Animacion muerte_36
+  - first:
+      213: 1089738447344315285
+    second: Animacion muerte_0
+  - first:
+      213: 2666230025736141931
+    second: Animacion muerte_1
+  - first:
+      213: 6751452392953739054
+    second: Animacion muerte_2
+  - first:
+      213: 5288823603336383892
+    second: Animacion muerte_3
+  - first:
+      213: -8896945814863457413
+    second: Animacion muerte_4
+  - first:
+      213: 7071187705164158948
+    second: Animacion muerte_5
+  - first:
+      213: -8157822570064533792
+    second: Animacion muerte_6
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -31,7 +163,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
+    filterMode: 0
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -40,7 +172,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -64,7 +196,43 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -73,7 +241,154 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Animacion muerte_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59b2b0c18578f1f00800000000000000
+      internalID: 1089738447344315285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animacion muerte_1
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6cbb75051a500520800000000000000
+      internalID: 2666230025736141931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animacion muerte_2
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e27f7ff3e2af1bd50800000000000000
+      internalID: 6751452392953739054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animacion muerte_3
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49d019cbb0da56940800000000000000
+      internalID: 5288823603336383892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animacion muerte_4
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b735a2f5be2b78480800000000000000
+      internalID: -8896945814863457413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animacion muerte_5
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e75b6ac0c7e12260800000000000000
+      internalID: 7071187705164158948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animacion muerte_6
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e6a3a2389799ce80800000000000000
+      internalID: -8157822570064533792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
