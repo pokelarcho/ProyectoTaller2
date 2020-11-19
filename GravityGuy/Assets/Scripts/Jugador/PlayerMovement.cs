@@ -14,8 +14,9 @@ public class PlayerMovement : MonoBehaviour
     private Collision coll;
     [HideInInspector]
     public Rigidbody2D rb;
-    private AnimationScript anim;
+    public AnimationScript anim;
     public SpriteRenderer sp;
+    public Death dd;
 
 
 
@@ -61,107 +62,114 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponentInChildren<AnimationScript>();
         sp = GetComponentInChildren<SpriteRenderer>();
-
+        dd = GetComponent<Death>();
 
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        float x = Input.GetAxis("Horizontal");
-        float y = Input.GetAxis("Vertical");
-        float xRaw = Input.GetAxisRaw("Horizontal");
-        float yRaw = Input.GetAxisRaw("Vertical");
-        Vector2 dir = new Vector2(xRaw, yRaw);
-
-        Walk(dir);
-
-        anim.SetHorizontalMovement(x, y, rb.velocity.y, vertigo);
-
-        if (grounded && !isDashing)
-        {
-            wallJumped = false;
-            GetComponent<BetterJumping>().enabled = true;
-        }
-        
-
-        if (Input.GetButtonDown("Jump"))
+        if (!dd.isDeath)
         {
 
 
-            if (grounded)
+            float x = Input.GetAxis("Horizontal");
+            float y = Input.GetAxis("Vertical");
+            float xRaw = Input.GetAxisRaw("Horizontal");
+            float yRaw = Input.GetAxisRaw("Vertical");
+            Vector2 dir = new Vector2(xRaw, yRaw);
+
+            Walk(dir);
+
+            anim.SetHorizontalMovement(xRaw, yRaw, rb.velocity.y, rb.velocity.x, vertigo);
+
+            if (grounded && !isDashing)
             {
-                Jump(Vector2.up);
-                anim.SetTrigger("jump");
+                wallJumped = false;
+                GetComponent<BetterJumping>().enabled = true;
+            }
+
+
+            if (Input.GetButtonDown("Jump"))
+            {
+
+
+                if (grounded)
+                {
+
+                    Jump(Vector2.up);
+                    anim.SetTrigger("jump");
+
+                }
+            }
+
+
+            //DASH
+            if (Input.GetKeyDown(KeyCode.J) && !hasDashed)
+            {
+                if (xRaw != 0 || yRaw != 0)
+                    Dash(xRaw, yRaw);
+            }
+
+            if (grounded && !groundTouch)
+            {
+                GroundTouch();
+                groundTouch = true;
+            }
+
+            if (!grounded && groundTouch)
+            {
+                groundTouch = false;
+            }
+
+
+
+
+            if (x > 0)
+            {
+                side = 1;
+                anim.Flip(side);
+            }
+            if (x < 0)
+            {
+                side = -1;
+                anim.Flip(side);
+            }
+
+
+            float scalay = transform.GetScaleY();
+            if (vertigo == true)
+            {
+
+                rb.gravityScale = -10;
+
+                //transform.Rotate(new Vector3(180, 0, 0));
+                //sp.flipY = true;
+
+                transform.SetScaleY(-1 * Mathf.Abs(scalay));
+
+                /* if (Cam)
+                 {
+                     CamPlay.GetComponent<Transform>().position = new Vector3(Camo.x, Camo.y, 10f);
+                 }*/
+            }
+            else
+            {
+
+                rb.gravityScale = 10;
+
+                transform.SetScaleY(1 * Mathf.Abs(scalay));
+
+                /* if (Cam)
+                 {
+                     CamPlay.GetComponent<Transform>().position = new Vector3(Camo.x, Camo.y, -10f);
+                 }
+                */
             }
         }
 
-
-        //DASH
-        if (Input.GetKeyDown(KeyCode.J) && !hasDashed)
-        {
-            if (xRaw != 0 || yRaw != 0)
-                Dash(xRaw, yRaw);
-        }
-
-        if (grounded && !groundTouch)
-        {
-            GroundTouch();
-            groundTouch = true;
-        }
-
-        if (!grounded && groundTouch)
-        {
-            groundTouch = false;
-        }
-
-
-
-
-       if (x > 0)
-         {
-             side = 1;
-             anim.Flip(side);
-         }
-         if (x < 0)
-         {
-             side = -1;
-             anim.Flip(side);
-         }
-
-
-        float scalay = transform.GetScaleY();
-        if (vertigo == true)
-        {
-            
-            rb.gravityScale = -10;
-
-            //transform.Rotate(new Vector3(180, 0, 0));
-            //sp.flipY = true;
-            
-            transform.SetScaleY(-1 * Mathf.Abs(scalay));
-            
-            /* if (Cam)
-             {
-                 CamPlay.GetComponent<Transform>().position = new Vector3(Camo.x, Camo.y, 10f);
-             }*/
-        }
-        else
-        {
-
-            rb.gravityScale = 10;
-
-            transform.SetScaleY(1 * Mathf.Abs(scalay));
-
-            /* if (Cam)
-             {
-                 CamPlay.GetComponent<Transform>().position = new Vector3(Camo.x, Camo.y, -10f);
-             }
-            */
-        }
     }
-
+     
 
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -289,15 +297,17 @@ public class PlayerMovement : MonoBehaviour
 
     private void Dash(float x, float y)
     {
-      Camera.main.transform.DOComplete();
-      Camera.main.transform.DOShakePosition(.2f, .5f, 14, 90, false, true);
-        //FindObjectOfType<RippleEffect>().Emit(Camera.main.WorldToViewportPoint(transform.position));
+
+        anim.SetTrigger("dash");
+        Camera.main.transform.DOComplete();
+      Camera.main.transform.DOShakePosition(.2f, .1f, 50, 90, false, true);
+        
      
         hasDashed = true;
 
-         anim.SetTrigger("dash");
+         
         
-        StartCoroutine(DisableMovement(.2f));
+        StartCoroutine(DisableMovement(.1f));
         rb.velocity = Vector2.zero;
         Vector2 dir = new Vector2(x, y);
 

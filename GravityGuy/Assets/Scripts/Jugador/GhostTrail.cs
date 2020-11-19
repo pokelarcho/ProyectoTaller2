@@ -15,6 +15,7 @@ public class GhostTrail : MonoBehaviour
     public float fadeTime;
     private GameObject PlayerBoy;
     private PlayerMovement cs;
+    private SpriteRenderer psr;
   
 
 

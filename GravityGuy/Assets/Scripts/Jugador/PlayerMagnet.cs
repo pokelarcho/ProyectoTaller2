@@ -10,16 +10,24 @@ public class PlayerMagnet : MonoBehaviour
     public float atraccion;
     public int direction;
     Vector3 Dife;
+    Vector3 Dife2;
     Vector3 DetEnt;
+    Vector3 DetEnt2;
     RaycastHit2D hit;
     RaycastHit2D hit2;
     Transform monster;
+    private PlayerMovement pm;
+    public bool magnetAction; //verifica si esta atrayendo
+    public bool magnetism;//true es repeler, false atraer
 
     void Start()
     {
-        Dife = new Vector3(10f, 0f, 0f);
-        DetEnt = new Vector3(7f, 0f, 0f);
+        Dife = new Vector3(2f, 1f, 0f);
+        Dife2 = new Vector3(2f, -1f, 0f);
+        DetEnt = new Vector3(4f, 1.5f, 0f);
+        DetEnt2 = new Vector3(-4f, 1.5f, 0f);
         direction = 1;
+        pm = GetComponent<PlayerMovement>();
     }
 
     void Update()
@@ -34,6 +42,10 @@ public class PlayerMagnet : MonoBehaviour
         {
             DetPolo();
         }
+
+        if (Input.GetKeyUp(KeyCode.L)) {
+            magnetAction = false;
+        }
     }
     // 1 es derecha
     // -1 es izquierda
@@ -46,7 +58,7 @@ public class PlayerMagnet : MonoBehaviour
         }
         else
         {
-            Gizmos.DrawSphere(transform.position + (DetEnt * -1), 1);
+            Gizmos.DrawSphere(transform.position + DetEnt2, 1);
         }
 
     }
@@ -73,9 +85,9 @@ public class PlayerMagnet : MonoBehaviour
         }
         else
         {
-            hit2 = Physics2D.CircleCast(transform.position + (DetEnt * -1), 1, new Vector2(0f, 0f));
-            hit = Physics2D.Raycast(transform.position - Dife, Vector2.left, distance);
-            Debug.DrawRay(transform.position - Dife, Vector2.left * distance, Color.green, Time.fixedDeltaTime);
+            hit2 = Physics2D.CircleCast(transform.position + (DetEnt2), 1, new Vector2(0f, 0f));
+            hit = Physics2D.Raycast(transform.position - Dife2, Vector2.left, distance);
+            Debug.DrawRay(transform.position - Dife2, Vector2.left * distance, Color.green, Time.fixedDeltaTime);
         }
     }
     //true es positivo
@@ -96,52 +108,69 @@ public class PlayerMagnet : MonoBehaviour
         if (hit2.collider != null && hit2.collider.GetComponent<PoleType>())
         {
             monster = hit2.transform.GetComponent<Transform>();
-            if (hit2.collider.GetComponent<PoleType>().polo == true && polo)
+            if (hit2.collider.GetComponent<PoleType>().polo == true && polo == true)
             {
+
+
+                magnetAction = true;
+                magnetism = false;
                 if (Detatrac())
                 {
-                    monster.position = transform.position + new Vector3(-7f, 1f, 0f);
+                    monster.position = transform.position + new Vector3(-4f, 1f, 0f);
                 }
                 else
                 {
-                    monster.position = transform.position + new Vector3(7f, 1f, 0f);
+                    monster.position = transform.position + new Vector3(4f, 1f, 0f);
                 }
             }
             else if (hit2.collider.GetComponent<PoleType>().polo == false && polo == false)
             {
+                magnetAction = true;
+                magnetism = false;
                 if (Detatrac())
                 {
-                    monster.position = transform.position + new Vector3(-7f, 1f, 0f);
+                    monster.position = transform.position + new Vector3(-4f, 1f, 0f);
                 }
                 else
                 {
-                    monster.position = transform.position + new Vector3(7f, 1f, 0f);
+                    monster.position = transform.position + new Vector3(4f, 1f, 0f);
                 }
             }
         }
         if (hit.collider != null && hit.collider.GetComponent<PoleType>())
         {
-            if (hit.collider.GetComponent<PoleType>().polo == true)
+            if (hit.collider.GetComponent<PoleType>().polo == true && polo == false)
             {
                 monster = hit.transform.GetComponent<Transform>();
+                magnetAction = true;
+                magnetism = true;
+
                 if (Detatrac())
                 {
+                    
+
                     monster.position = new Vector2(monster.position.x + atraccion, monster.position.y);
                 }
                 else
                 {
+                   
                     monster.position = new Vector2(monster.position.x + (atraccion * -1), monster.position.y);
                 }
             }
-            else if (hit.collider.GetComponent<PoleType>().polo == false)
+            else if (hit.collider.GetComponent<PoleType>().polo == false && polo == true)
             {
                 monster = hit.transform.GetComponent<Transform>();
+
+                magnetAction = true;
+                magnetism = true;
                 if (Detatrac())
                 {
+                   
                     monster.position = new Vector2(monster.position.x + atraccion, monster.position.y);
                 }
                 else
                 {
+
                     monster.position = new Vector2(monster.position.x + (atraccion * -1), monster.position.y);
                 }
             }
