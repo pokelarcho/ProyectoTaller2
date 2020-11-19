@@ -9,6 +9,8 @@ public class AnimationScript : MonoBehaviour
     private PlayerMovement move;
     private Death death;
     private PlayerMagnet playermag;
+    public RuntimeAnimatorController cBoy;
+    public RuntimeAnimatorController cGirl;
 
     [HideInInspector]
     public SpriteRenderer sr;
@@ -21,6 +23,11 @@ public class AnimationScript : MonoBehaviour
         death = GetComponentInParent<Death>();
         playermag = GetComponentInParent<PlayerMagnet>();
         sr = GetComponent<SpriteRenderer>();
+
+        if(PlayerSelect.genre == 1)
+            anim.runtimeAnimatorController = cBoy;
+        else
+            anim.runtimeAnimatorController = cGirl;
     }
 
     // Update is called once per frame

@@ -1,7 +1,37 @@
 fileFormatVersion: 2
 guid: 7cafc2838dffa1b4eac13a60cdf108b5
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -3523476284490284947
+    second: GirlWalkRepeler_0
+  - first:
+      213: 2504712953641249681
+    second: GirlWalkRepeler_1
+  - first:
+      213: 2148784622523516513
+    second: GirlWalkRepeler_2
+  - first:
+      213: 5101581904978045874
+    second: GirlWalkRepeler_3
+  - first:
+      213: -3129642665541890422
+    second: GirlWalkRepeler_4
+  - first:
+      213: -313764020747869153
+    second: GirlWalkRepeler_5
+  - first:
+      213: 4144489354645443188
+    second: GirlWalkRepeler_6
+  - first:
+      213: -7813831295282652732
+    second: GirlWalkRepeler_7
+  - first:
+      213: 4953778546989492905
+    second: GirlWalkRepeler_8
+  - first:
+      213: -7886324025598623742
+    second: GirlWalkRepeler_9
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -31,7 +61,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
+    filterMode: 0
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -40,7 +70,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -64,7 +94,43 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -73,7 +139,217 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: GirlWalkRepeler_0
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 19
+        width: 41
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d608178ccf81a1fc0800000000000000
+      internalID: -3523476284490284947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GirlWalkRepeler_1
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 19
+        width: 39
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19b2b1a292782c220800000000000000
+      internalID: 2504712953641249681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GirlWalkRepeler_2
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 19
+        width: 38
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 166065cba3402dd10800000000000000
+      internalID: 2148784622523516513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GirlWalkRepeler_3
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 19
+        width: 45
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bbe6c696b57cc640800000000000000
+      internalID: 5101581904978045874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GirlWalkRepeler_4
+      rect:
+        serializedVersion: 2
+        x: 554
+        y: 19
+        width: 51
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8e0876c3964194d0800000000000000
+      internalID: -3129642665541890422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GirlWalkRepeler_5
+      rect:
+        serializedVersion: 2
+        x: 689
+        y: 19
+        width: 42
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f146608194945abf0800000000000000
+      internalID: -313764020747869153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GirlWalkRepeler_6
+      rect:
+        serializedVersion: 2
+        x: 818
+        y: 19
+        width: 40
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 472970f0c1f248930800000000000000
+      internalID: 4144489354645443188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GirlWalkRepeler_7
+      rect:
+        serializedVersion: 2
+        x: 947
+        y: 19
+        width: 39
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c9d8dd16d1bf8390800000000000000
+      internalID: -7813831295282652732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GirlWalkRepeler_8
+      rect:
+        serializedVersion: 2
+        x: 1072
+        y: 19
+        width: 43
+        height: 58
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9aa624d975b5fb440800000000000000
+      internalID: 4953778546989492905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GirlWalkRepeler_9
+      rect:
+        serializedVersion: 2
+        x: 1196
+        y: 19
+        width: 48
+        height: 58
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 200c09e05162e8290800000000000000
+      internalID: -7886324025598623742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

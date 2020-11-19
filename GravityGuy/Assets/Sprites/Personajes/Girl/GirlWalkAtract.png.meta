@@ -1,7 +1,37 @@
 fileFormatVersion: 2
 guid: ded39f40f5216af48bd38b94bad0a070
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -5070924840026613389
+    second: GirlWalkAtract_0
+  - first:
+      213: -6198746577167266993
+    second: GirlWalkAtract_1
+  - first:
+      213: 878788200860010578
+    second: GirlWalkAtract_2
+  - first:
+      213: -7505582214484517782
+    second: GirlWalkAtract_3
+  - first:
+      213: -8307381416221470685
+    second: GirlWalkAtract_4
+  - first:
+      213: 7987321017697924496
+    second: GirlWalkAtract_5
+  - first:
+      213: 8483195748384040193
+    second: GirlWalkAtract_6
+  - first:
+      213: 3990472881316363857
+    second: GirlWalkAtract_7
+  - first:
+      213: -3364224102366109742
+    second: GirlWalkAtract_8
+  - first:
+      213: 3762625270537919073
+    second: GirlWalkAtract_9
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -31,7 +61,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
+    filterMode: 0
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -40,7 +70,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -64,7 +94,43 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -73,7 +139,217 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: GirlWalkAtract_0
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 19
+        width: 41
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 379528399b470a9b0800000000000000
+      internalID: -5070924840026613389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GirlWalkAtract_1
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 19
+        width: 38
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4bc64794d0a9f9a0800000000000000
+      internalID: -6198746577167266993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GirlWalkAtract_2
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 19
+        width: 38
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 258c0117635123c00800000000000000
+      internalID: 878788200860010578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GirlWalkAtract_3
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 19
+        width: 45
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6c19210eb0d6d790800000000000000
+      internalID: -7505582214484517782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GirlWalkAtract_4
+      rect:
+        serializedVersion: 2
+        x: 554
+        y: 19
+        width: 51
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3201078cd9046bc80800000000000000
+      internalID: -8307381416221470685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GirlWalkAtract_5
+      rect:
+        serializedVersion: 2
+        x: 689
+        y: 19
+        width: 42
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09575ee952aa8de60800000000000000
+      internalID: 7987321017697924496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GirlWalkAtract_6
+      rect:
+        serializedVersion: 2
+        x: 818
+        y: 19
+        width: 40
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 105e886569d5ab570800000000000000
+      internalID: 8483195748384040193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GirlWalkAtract_7
+      rect:
+        serializedVersion: 2
+        x: 947
+        y: 19
+        width: 38
+        height: 59
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15ef0b071f1016730800000000000000
+      internalID: 3990472881316363857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GirlWalkAtract_8
+      rect:
+        serializedVersion: 2
+        x: 1072
+        y: 19
+        width: 43
+        height: 58
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2df19a9d000ef41d0800000000000000
+      internalID: -3364224102366109742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GirlWalkAtract_9
+      rect:
+        serializedVersion: 2
+        x: 1196
+        y: 19
+        width: 48
+        height: 58
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16a12519fb7873430800000000000000
+      internalID: 3762625270537919073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

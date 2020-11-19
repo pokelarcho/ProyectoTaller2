@@ -1,7 +1,37 @@
 fileFormatVersion: 2
 guid: d569bb17b57717145a94fb137b27b80b
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -8752601469681782304
+    second: GirlIdleRepeler_0
+  - first:
+      213: 4981148920769859064
+    second: GirlIdleRepeler_1
+  - first:
+      213: 3707299172349366173
+    second: GirlIdleRepeler_2
+  - first:
+      213: -6334853814633648094
+    second: GirlIdleRepeler_3
+  - first:
+      213: -3050308031373664363
+    second: GirlIdleRepeler_4
+  - first:
+      213: -8732962227153341365
+    second: GirlIdleRepeler_5
+  - first:
+      213: -1352015757442532128
+    second: GirlIdleRepeler_6
+  - first:
+      213: 8061867678914678479
+    second: GirlIdleRepeler_7
+  - first:
+      213: -875492196857210351
+    second: GirlIdleRepeler_8
+  - first:
+      213: -4689027070362398384
+    second: GirlIdleRepeler_9
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -31,7 +61,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
+    filterMode: 0
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -40,7 +70,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -64,7 +94,43 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -73,7 +139,217 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: GirlIdleRepeler_0
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 19
+        width: 40
+        height: 62
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e13e0b2653888680800000000000000
+      internalID: -8752601469681782304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GirlIdleRepeler_1
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 19
+        width: 40
+        height: 62
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fdcecb5d88902540800000000000000
+      internalID: 4981148920769859064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GirlIdleRepeler_2
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 19
+        width: 40
+        height: 62
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9fcbf384f8f27330800000000000000
+      internalID: 3707299172349366173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GirlIdleRepeler_3
+      rect:
+        serializedVersion: 2
+        x: 433
+        y: 19
+        width: 40
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 220bbb2e4041618a0800000000000000
+      internalID: -6334853814633648094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GirlIdleRepeler_4
+      rect:
+        serializedVersion: 2
+        x: 561
+        y: 19
+        width: 40
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59f9376b1012ba5d0800000000000000
+      internalID: -3050308031373664363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GirlIdleRepeler_5
+      rect:
+        serializedVersion: 2
+        x: 689
+        y: 19
+        width: 40
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b44fe95af194ec680800000000000000
+      internalID: -8732962227153341365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GirlIdleRepeler_6
+      rect:
+        serializedVersion: 2
+        x: 817
+        y: 19
+        width: 40
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ec38e6f4dcac3de0800000000000000
+      internalID: -1352015757442532128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GirlIdleRepeler_7
+      rect:
+        serializedVersion: 2
+        x: 945
+        y: 19
+        width: 40
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fce89ebb0f181ef60800000000000000
+      internalID: 8061867678914678479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GirlIdleRepeler_8
+      rect:
+        serializedVersion: 2
+        x: 1073
+        y: 19
+        width: 40
+        height: 62
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11a13ba4c70a9d3f0800000000000000
+      internalID: -875492196857210351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GirlIdleRepeler_9
+      rect:
+        serializedVersion: 2
+        x: 1201
+        y: 19
+        width: 40
+        height: 62
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 051dbd819ba3deeb0800000000000000
+      internalID: -4689027070362398384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

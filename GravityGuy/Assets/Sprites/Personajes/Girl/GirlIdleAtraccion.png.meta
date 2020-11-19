@@ -1,7 +1,37 @@
 fileFormatVersion: 2
 guid: e06d949506ef6ea4589410d8f2606dfd
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 2653942908361009398
+    second: GirlIdleAtraccion_0
+  - first:
+      213: 4506635141576095093
+    second: GirlIdleAtraccion_1
+  - first:
+      213: 6914152519664090048
+    second: GirlIdleAtraccion_2
+  - first:
+      213: -4034959940335919695
+    second: GirlIdleAtraccion_3
+  - first:
+      213: -8457010926508616435
+    second: GirlIdleAtraccion_4
+  - first:
+      213: -486589719440802778
+    second: GirlIdleAtraccion_5
+  - first:
+      213: 4182042527046594535
+    second: GirlIdleAtraccion_6
+  - first:
+      213: -5377037223091436182
+    second: GirlIdleAtraccion_7
+  - first:
+      213: -1521546414036564130
+    second: GirlIdleAtraccion_8
+  - first:
+      213: 8528033395597610970
+    second: GirlIdleAtraccion_9
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -31,7 +61,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
+    filterMode: 0
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -40,7 +70,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -64,7 +94,43 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -73,7 +139,217 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: GirlIdleAtraccion_0
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 19
+        width: 39
+        height: 62
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f866039303b4d420800000000000000
+      internalID: 2653942908361009398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GirlIdleAtraccion_1
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 19
+        width: 39
+        height: 62
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5757fe9b8c8ca8e30800000000000000
+      internalID: 4506635141576095093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GirlIdleAtraccion_2
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 19
+        width: 39
+        height: 62
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cb3379751104ff50800000000000000
+      internalID: 6914152519664090048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GirlIdleAtraccion_3
+      rect:
+        serializedVersion: 2
+        x: 433
+        y: 19
+        width: 39
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bd9859ff41f008c0800000000000000
+      internalID: -4034959940335919695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GirlIdleAtraccion_4
+      rect:
+        serializedVersion: 2
+        x: 561
+        y: 19
+        width: 39
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d055bd79e59a2aa80800000000000000
+      internalID: -8457010926508616435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GirlIdleAtraccion_5
+      rect:
+        serializedVersion: 2
+        x: 689
+        y: 19
+        width: 39
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62cbf5d6a394f39f0800000000000000
+      internalID: -486589719440802778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GirlIdleAtraccion_6
+      rect:
+        serializedVersion: 2
+        x: 817
+        y: 19
+        width: 39
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ef603c5589990a30800000000000000
+      internalID: 4182042527046594535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GirlIdleAtraccion_7
+      rect:
+        serializedVersion: 2
+        x: 945
+        y: 19
+        width: 39
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a650595622de065b0800000000000000
+      internalID: -5377037223091436182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GirlIdleAtraccion_8
+      rect:
+        serializedVersion: 2
+        x: 1073
+        y: 19
+        width: 39
+        height: 62
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e57c412199162eae0800000000000000
+      internalID: -1521546414036564130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GirlIdleAtraccion_9
+      rect:
+        serializedVersion: 2
+        x: 1201
+        y: 19
+        width: 39
+        height: 62
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adf83499039a95670800000000000000
+      internalID: 8528033395597610970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
