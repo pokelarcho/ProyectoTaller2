@@ -52,6 +52,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: CapaVertigo
+    uniqueID: 2415475455
+    locked: 0
   - name: CapaMapa
     uniqueID: 1374420263
     locked: 0
