@@ -105,6 +105,30 @@ public class Death : MonoBehaviour
 
 
         }
+
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            if (!invencible)
+            {
+                PM.speed = 0;
+
+                isDeath = true;
+                invencible = true;
+                lives--;
+                PM.anim.SetTrigger("death");
+                // StopCoroutine(DisableMovement(0));
+                StartCoroutine(DisableMovement(.7f));
+
+                FindObjectOfType<RippleEffect>().Emit(Camera.main.WorldToViewportPoint(transform.position));
+
+
+                //Transportar  a Checkpoint
+                StartCoroutine(Invencibilidad(5f));
+
+                Muerte();
+            }
+
+        }
     }
 
 

@@ -15,6 +15,7 @@ TagManager:
   - Enemy
   - CheckPoint
   - Lives
+  - Weapon
   layers:
   - Default
   - TransparentFX

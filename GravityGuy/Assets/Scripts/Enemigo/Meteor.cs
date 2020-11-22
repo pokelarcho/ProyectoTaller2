@@ -7,6 +7,9 @@ public class Meteor : MonoBehaviour
     // Start is called before the first frame update
     public GameObject[] enemies;
 
+    public float INICIO;
+    public float FINAL;
+
     private float spawnTimer = 0f;
     public float spawnInterval = 0f;
 
@@ -25,7 +28,7 @@ public class Meteor : MonoBehaviour
 
     void SpawnEnemy()
     {
-        Vector3 spawnPos = Camera.main.ViewportToWorldPoint(new Vector3(0.6f, 0.8f, 10f));
+        Vector2 spawnPos = new Vector2(Random.Range(INICIO, FINAL), transform.position.y);
         GameObject obj = Instantiate(enemies[0], spawnPos, Quaternion.identity);
         obj.transform.parent = transform;
     }

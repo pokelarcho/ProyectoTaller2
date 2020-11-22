@@ -19,7 +19,7 @@ public class MeteorMovement : MonoBehaviour
 
         counter += Time.deltaTime;
 
-        if (counter >= 2f)
+        //if (counter >= 5f)
             Destroy(gameObject);
     }
 
@@ -27,7 +27,7 @@ public class MeteorMovement : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
-       
+        Destroy(this.gameObject);
     }
 
 }

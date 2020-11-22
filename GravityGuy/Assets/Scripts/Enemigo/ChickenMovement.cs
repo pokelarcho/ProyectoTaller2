@@ -6,34 +6,45 @@ public class ChickenMovement : MonoBehaviour
 {
     // Start is called before the first frame update
     public float speed;
+    public float Rango;
 
+    Vector3 Dif;
     RaycastHit2D hit;
+    RaycastHit2D hit2;
 
+    SpriteRenderer SR;
+    Rigidbody2D Rb2D;
 
     void Start()
     {
-        
+        Dif = new Vector3(1.5f, 0f, 0f);
+        SR = GetComponent<SpriteRenderer>();
+        Rb2D = GetComponent<Rigidbody2D>();
     }
 
     void Update()
-         {
-                 hit = Physics2D.Raycast(transform.position, Vector2.left, 10);
-                    Debug.DrawRay(transform.position, Vector2.left * 10, Color.green, Time.fixedDeltaTime);
-        if (hit.collider.tag == "Player")
-        {
-            GetComponent<Rigidbody2D>().velocity = speed * Vector2.left;
-        }
-
+    {
+        RAYO();
+        Detect();
     }
-
-   
-       
-
-    
-
-
-
-
-
-
+    void RAYO()
+    {
+        hit = Physics2D.Raycast(transform.position + Dif, Vector2.right, Rango);
+        hit2 = Physics2D.Raycast(transform.position + (Dif * -1), Vector2.left, Rango);
+        Debug.DrawRay(transform.position + Dif, Vector2.right * Rango, Color.green, Time.fixedDeltaTime);
+        Debug.DrawRay(transform.position + (Dif * -1), Vector2.left * Rango, Color.blue, Time.fixedDeltaTime);
+    }
+    void Detect()
+    {
+        if (hit.collider != null && hit.collider.gameObject.CompareTag("Player"))
+        {
+            SR.flipX = false;
+            Rb2D.velocity = new Vector2(speed, Rb2D.velocity.y);
+        }
+        else if (hit2.collider != null && hit2.collider.gameObject.CompareTag("Player"))
+        {
+            SR.flipX = true;
+            Rb2D.velocity = new Vector2(speed * -1, Rb2D.velocity.y);
+        }
+    }
 }
