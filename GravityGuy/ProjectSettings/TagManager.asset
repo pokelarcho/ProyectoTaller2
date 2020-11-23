@@ -49,6 +49,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: CapaBackground
+    uniqueID: 2521452173
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
