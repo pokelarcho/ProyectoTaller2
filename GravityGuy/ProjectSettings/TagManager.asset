@@ -15,7 +15,6 @@ TagManager:
   - Enemy
   - CheckPoint
   - Lives
-  - Weapon
   layers:
   - Default
   - TransparentFX
@@ -59,6 +58,12 @@ TagManager:
   - name: CapaMapa
     uniqueID: 1374420263
     locked: 0
+  - name: CapaEnemigo
+    uniqueID: 3589254009
+    locked: 0
   - name: CapaJugador
     uniqueID: 2463592679
+    locked: 0
+  - name: CapaInterfaz
+    uniqueID: 369256373
     locked: 0

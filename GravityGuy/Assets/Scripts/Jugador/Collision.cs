@@ -9,7 +9,7 @@ public class Collision : MonoBehaviour
     public LayerMask groundLayer;
 
     public LayerMask vertigoLayer;
-
+    private PlayerMovement pm;
     
 
     [Space]
@@ -32,7 +32,7 @@ public class Collision : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        pm = GetComponent<PlayerMovement>();
     }
 
     // Update is called once per frame
@@ -41,7 +41,7 @@ public class Collision : MonoBehaviour
         //GROUNDED EN VERTIGO
         onVertigo = Physics2D.OverlapCircle((Vector2)transform.position + bottomOffset, collisionRadius, vertigoLayer);
 
-            onGround = Physics2D.OverlapCircle((Vector2)transform.position + bottomOffset, collisionRadius, groundLayer);
+            pm.grounded = Physics2D.OverlapCircle((Vector2)transform.position + bottomOffset, collisionRadius, groundLayer);
     }
 
     void OnDrawGizmos()

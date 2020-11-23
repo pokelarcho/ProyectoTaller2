@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using DG.Tweening;
 using PowerTools;
+using Cinemachine;
 
 
 public class PlayerMovement : MonoBehaviour
@@ -214,22 +215,22 @@ public class PlayerMovement : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
-            grounded = true;
+            //grounded = true;
             isDashing = false;
 
         }
 
     }
-
+/*
     private void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
-            grounded = false;
+            //grounded = false;
 
         }
     }
-
+    */
 
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -303,14 +304,22 @@ public class PlayerMovement : MonoBehaviour
         canMove = true;
     }
 
+    public void ModifyBody(bool mod) {
+        rb.simulated = mod;
+    }
+
     private void Dash(float x, float y)
     {
 
         anim.SetTrigger("dash");
+
+        //Cinemachine.impul
         Camera.main.transform.DOComplete();
       Camera.main.transform.DOShakePosition(.2f, .1f, 50, 90, false, true);
         
-     
+
+
+
         hasDashed = true;
 
          
@@ -330,7 +339,8 @@ public class PlayerMovement : MonoBehaviour
 
     IEnumerator DashWait()
     {
-       FindObjectOfType<GhostTrail>().ShowGhost();
+        yield return new WaitForEndOfFrame();
+        FindObjectOfType<GhostTrail>().ShowGhost();
         StartCoroutine(GroundDash());
         DOVirtual.Float(14, 0, .8f, RigidbodyDrag);
 
@@ -355,6 +365,7 @@ public class PlayerMovement : MonoBehaviour
         GetComponent<BetterJumping>().enabled = true;
         
         isDashing = false;
+        
     }
 
 

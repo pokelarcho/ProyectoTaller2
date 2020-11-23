@@ -6,7 +6,12 @@ public class Alien : MonoBehaviour
 {
     public bool tienePistola;
     public float Rango;
+    public GameObject Prefab;
+    float timer;
+    public float MaxTimer;
+
     Vector3 Dif;
+    Vector2 Direccion;
     RaycastHit2D hit;
     RaycastHit2D hit2;
     SpriteRenderer SR;
@@ -16,6 +21,7 @@ public class Alien : MonoBehaviour
         Dif = new Vector3(1.5f, 0f, 0f);
         SR = GetComponent<SpriteRenderer>();
         tienePistola = true;
+        timer = MaxTimer - 1;
     }
 
     void Update()
@@ -37,16 +43,34 @@ public class Alien : MonoBehaviour
     {
         if (hit.collider != null && hit.collider.gameObject.CompareTag("Player"))
         {
-            SR.flipX = false;
+            SR.flipX = true;
+            Direccion.x = 1;
+            Spawn();
         }
         else if (hit2.collider != null && hit2.collider.gameObject.CompareTag("Player"))
         {
-            SR.flipX = true;
+            SR.flipX = false;
+            Direccion.x = -1;
+            Spawn();
+        }
+    }
+    void Disparo()
+    {
+        Instantiate(Prefab, transform.position, transform.rotation);
+        Prefab.GetComponent<Poff>().direction = Direccion;
+    }
+    void Spawn()
+    {
+        timer += Time.deltaTime;
+        if (timer >= MaxTimer)
+        {
+            Disparo();
+            timer = 0;
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Weapon"))
+        if (collision.gameObject.name == "arma")
         {
             tienePistola = false;
         }

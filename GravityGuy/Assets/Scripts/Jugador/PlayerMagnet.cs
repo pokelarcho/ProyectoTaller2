@@ -16,6 +16,7 @@ public class PlayerMagnet : MonoBehaviour
     RaycastHit2D hit;
     RaycastHit2D hit2;
     Transform monster;
+    Patrulla slime;
     private PlayerMovement pm;
     public bool magnetAction; //verifica si esta atrayendo
     public bool magnetism;//true es repeler, false atraer
@@ -44,6 +45,12 @@ public class PlayerMagnet : MonoBehaviour
         }
 
         if (Input.GetKeyUp(KeyCode.L)) {
+            if (magnetAction == true && magnetism == false)
+            {
+                DetPolo();
+                Magnetismo();
+                
+            }
             magnetAction = false;
         }
     }
@@ -108,25 +115,33 @@ public class PlayerMagnet : MonoBehaviour
         if (hit2.collider != null && hit2.collider.GetComponent<PoleType>())
         {
             monster = hit2.transform.GetComponent<Transform>();
+            slime = hit2.transform.GetComponent<Patrulla>();
             if (hit2.collider.GetComponent<PoleType>().polo == true && polo == true)
             {
 
-
+                
                 magnetAction = true;
                 magnetism = false;
+                slime.isMagneted = true;
+
                 if (Detatrac())
                 {
-                    monster.position = transform.position + new Vector3(-4f, 1f, 0f);
+                    monster.position = transform.position + new Vector3(4f, 1f, 0f);
+                    
                 }
                 else
                 {
-                    monster.position = transform.position + new Vector3(4f, 1f, 0f);
+                    monster.position = transform.position + new Vector3(-4f, 1f, 0f);
                 }
+
+
             }
             else if (hit2.collider.GetComponent<PoleType>().polo == false && polo == false)
             {
+                
                 magnetAction = true;
                 magnetism = false;
+                slime.isMagneted = true;
                 if (Detatrac())
                 {
                     monster.position = transform.position + new Vector3(-4f, 1f, 0f);
@@ -139,30 +154,33 @@ public class PlayerMagnet : MonoBehaviour
         }
         if (hit.collider != null && hit.collider.GetComponent<PoleType>())
         {
+            slime = hit.transform.GetComponent<Patrulla>();
+            monster = hit.transform.GetComponent<Transform>();
             if (hit.collider.GetComponent<PoleType>().polo == true && polo == false)
             {
-                monster = hit.transform.GetComponent<Transform>();
+                
                 magnetAction = true;
                 magnetism = true;
+                slime.isMagneted = true;
 
                 if (Detatrac())
                 {
                     
 
-                    monster.position = new Vector2(monster.position.x + atraccion, monster.position.y);
+                    monster.position = new Vector2(monster.position.x + (atraccion*-1), monster.position.y);
                 }
                 else
                 {
                    
-                    monster.position = new Vector2(monster.position.x + (atraccion * -1), monster.position.y);
+                    monster.position = new Vector2(monster.position.x + (atraccion), monster.position.y);
                 }
             }
             else if (hit.collider.GetComponent<PoleType>().polo == false && polo == true)
             {
-                monster = hit.transform.GetComponent<Transform>();
-
+              
                 magnetAction = true;
                 magnetism = true;
+                slime.isMagneted = true;
                 if (Detatrac())
                 {
                    

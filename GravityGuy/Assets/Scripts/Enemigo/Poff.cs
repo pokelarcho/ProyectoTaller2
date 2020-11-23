@@ -4,32 +4,33 @@ using UnityEngine;
 
 public class Poff : MonoBehaviour
 {
+    Rigidbody2D rb2d;
+    public float speed;
+    public Vector2 direction;
 
-    public float speed = -20f;
-    public Rigidbody2D rb;
-    public CircleCollider2D cc;
-    private float counter;
-    // Start is called before the first frame update
+    public float timer;
+    public float maxTimer;
+
     void Start()
     {
-
-        rb = GetComponent<Rigidbody2D>();
-        
-        rb.velocity = transform.right * speed;
+        rb2d = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        counter += Time.deltaTime;
-
-        if (counter >= 2f)
-            Destroy(gameObject);
-
+        Move();
+        Timer();
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+    void Timer()
     {
-
-        
+        timer += Time.deltaTime;
+        if (timer >= maxTimer)
+        {
+            Destroy(gameObject);
+        }
+    }
+    void Move()
+    {
+        rb2d.velocity = direction * speed;
     }
 }

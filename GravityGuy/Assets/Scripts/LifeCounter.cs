@@ -22,22 +22,27 @@ public class LifeCounter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vidas.text = death.lives.ToString("0");
-        /*if (!Vidas.text.Equals(death.lives.ToString()))
-            StartCoroutine(Pulse());*/
-
-            
         
+       
+
+    }
+
+
+    public void UpdateText(int lives) {
+        
+        StartCoroutine(Pulse());
+        Vidas.text = lives.ToString();
+
     }
 
     private IEnumerator Pulse() {
-
+        Debug.Log(Vidas.text);
         for (float i = 1f; i <= 1.2f; i += 0.05f)
         {
             Vidas.rectTransform.localScale = new Vector3(i, i, i);
             yield return new WaitForEndOfFrame();
         }
-        Vidas.rectTransform.localScale = new Vector3(0.8f, 0.8f, 0.8f);
+        Vidas.rectTransform.localScale = new Vector3(1f, 1f, 1f);
 
         Vidas.text = death.lives.ToString("0");
 
@@ -46,6 +51,6 @@ public class LifeCounter : MonoBehaviour
             Vidas.rectTransform.localScale = new Vector3(i, i, i);
             yield return new WaitForEndOfFrame();
         }
-        Vidas.rectTransform.localScale = new Vector3(0.5f, 0.5f,0.5f);
+        Vidas.rectTransform.localScale = new Vector3(1f, 1f,1f);
     }
 }
