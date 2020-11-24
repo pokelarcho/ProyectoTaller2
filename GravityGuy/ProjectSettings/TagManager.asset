@@ -58,7 +58,13 @@ TagManager:
   - name: CapaVertigo
     uniqueID: 2415475455
     locked: 0
-  - name: CapaMapa
+  - name: CitiBackGround
+    uniqueID: 273399461
+    locked: 0
+  - name: ObjectsBackground
+    uniqueID: 3298893727
+    locked: 0
+  - name: CapaGround
     uniqueID: 1374420263
     locked: 0
   - name: CapaEnemigo
@@ -66,6 +72,9 @@ TagManager:
     locked: 0
   - name: CapaJugador
     uniqueID: 2463592679
+    locked: 0
+  - name: CapaForeground
+    uniqueID: 318556735
     locked: 0
   - name: CapaInterfaz
     uniqueID: 369256373
