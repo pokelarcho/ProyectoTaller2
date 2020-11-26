@@ -44,12 +44,14 @@ public class PlayerMagnet : MonoBehaviour
             DetPolo();
         }
 
+        //si cambia polo mientras atrae, repeler al soltar la tecla
         if (Input.GetKeyUp(KeyCode.L)) {
             if (magnetAction == true && magnetism == false)
             {
                 DetPolo();
                 Magnetismo();
-                
+                // crear coldown
+
             }
             magnetAction = false;
         }

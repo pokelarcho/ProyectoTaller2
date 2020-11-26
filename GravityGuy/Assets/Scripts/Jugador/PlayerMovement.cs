@@ -314,9 +314,9 @@ public class PlayerMovement : MonoBehaviour
         anim.SetTrigger("dash");
 
         //Cinemachine.impul
-        Camera.main.transform.DOComplete();
-      Camera.main.transform.DOShakePosition(.2f, .1f, 50, 90, false, true);
-        
+        //Camera.main.transform.DOComplete();
+      //Camera.main.transform.DOShakePosition(.2f, .1f, 50, 90, false, true);
+        //CineMachineShake.Instance.ShakeCamera(5f, 1f);
 
 
 

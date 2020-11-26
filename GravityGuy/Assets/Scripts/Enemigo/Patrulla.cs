@@ -29,6 +29,9 @@ public class Patrulla : MonoBehaviour
     }
     void Update()
     {
+
+
+        //TESTEAR BIEN
         if (isMagneted==false)
         {
            
