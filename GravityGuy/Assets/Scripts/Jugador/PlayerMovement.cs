@@ -147,7 +147,7 @@ public class PlayerMovement : MonoBehaviour
                 //transform.Rotate(new Vector3(180, 0, 0));
                 //sp.flipY = true;
                 time += Time.deltaTime;
-                if (time >= 0.5f)
+                if (time >= 0.6f)
                 {
 
                     transform.SetScaleY(-1 * Mathf.Abs(scalay));
@@ -164,7 +164,7 @@ public class PlayerMovement : MonoBehaviour
                 rb.gravityScale = 10;
 
                 time += Time.deltaTime;
-                if (time >= 0.5f)
+                if (time >= 0.6f)
                 {
                     transform.SetScaleY(1 * Mathf.Abs(scalay));
                     time = 0;
