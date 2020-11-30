@@ -4,29 +4,41 @@ using UnityEngine;
 
 public class UFOshoot : MonoBehaviour
 {
-    
-        public float spawmtime;
 
-        private float counter;
+    public float spawmtime;
+    float timer;
 
-        public Transform firePoint;
-        public GameObject bulletPrefab;
+    public GameObject bulletPrefab;
+    public GameObject Player;
+    public float BulletSpeed;
+    GameObject BS;
 
-        void Start()
+    Vector2 dir;
+
+    private void Start()
+    {
+        dir = (transform.position - Player.transform.position).normalized;
+        
+    }
+    void FixedUpdate()
+    {
+        Spawner();
+    }
+    void Spawner()
+    {
+        timer += Time.deltaTime;
+        if (timer >= spawmtime)
         {
-
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-            counter += Time.deltaTime;
-            if (counter >= spawmtime)
-            {
-                Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-                counter = 0;
-            }
+            BS = Instantiate(bulletPrefab, transform.position, transform.rotation);
+            timer = 0;
+            PlayerPosicion();
         }
     }
+    void PlayerPosicion()
+    {
+        dir = (Player.transform.position - transform.position).normalized;
+        BS.GetComponent<Rigidbody2D>().velocity = BulletSpeed * dir;
+    }
+}
 
 

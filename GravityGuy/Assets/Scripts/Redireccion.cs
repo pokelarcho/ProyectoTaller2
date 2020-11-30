@@ -13,4 +13,16 @@ public class Redireccion : MonoBehaviour
     public void Quit() {
         Application.Quit();
     }
+
+    public void SwitchCharacter(int numberplayer)
+    {
+        PlayerSelect.genre = numberplayer;
+    }
+
+    public void EnableTime() {
+        Time.timeScale = 1f;
+    }
+
+ 
+
 }

@@ -6,8 +6,7 @@ using PowerTools;
 public class Patrulla : MonoBehaviour
 {
     public float speed;
-    public AnimationClip animRun;
-    public AnimationClip animIdle;
+    
 
     Vector3 Dife;
     Vector3 centro;
@@ -16,44 +15,38 @@ public class Patrulla : MonoBehaviour
     RaycastHit2D hit;
     SpriteRenderer SR;
     SpriteAnim CompAnim;
-    public bool isMagneted=false;
+    public bool isMagneted = false;
 
     void Start()
     {
         Dife = new Vector3(1f, 0f, 0f);
-        centro = new Vector3(0f, 0.5f, 0f);
+        centro = new Vector3(0f, 0.1f, 0f);
         rb2d = GetComponent<Rigidbody2D>();
         CompAnim = GetComponent<SpriteAnim>();
         SR = GetComponent<SpriteRenderer>();
-        CompAnim.Play(animIdle);
+        
     }
     void Update()
     {
 
 
         //TESTEAR BIEN
-        if (isMagneted==false)
+        if (isMagneted == false)
         {
-           
             Move();
-            
-
         }
         else
         {
             speed = 0;
             StartCoroutine(RestartMovement());
-            
         }
-
         Rayo();
         Cambio();
-        Animar();
-
-
+        //Animar();
     }
 
-    IEnumerator RestartMovement() {
+    IEnumerator RestartMovement()
+    {
         yield return new WaitForSeconds(3f);
         isMagneted = false;
         speed = 15;
@@ -75,7 +68,7 @@ public class Patrulla : MonoBehaviour
     {
         rb2d.velocity = new Vector2(speed, rb2d.velocity.y);
     }
-    void Animar()
+   /* void Animar()
     {
         if (speed != 0)
         {
@@ -99,7 +92,7 @@ public class Patrulla : MonoBehaviour
                 CompAnim.Play(animIdle);
             }
         }
-    }
+    }*/
     void Cambio()
     {
         if (hit.collider != null && hit.collider.tag != "Player")
@@ -109,18 +102,23 @@ public class Patrulla : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        float scalay = transform.GetScaleY();
+
         if (collision.gameObject.CompareTag("Vertigo"))
         {
-            GetComponent<Rigidbody2D>().gravityScale = 20 * -1;
-            SR.flipY = true;
+            GetComponent<Rigidbody2D>().gravityScale = 15 * -1;
+            transform.SetScaleY(-1 * Mathf.Abs(scalay));
+            //SR.flipY = true;
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
+        float scalay = transform.GetScaleY();
         if (collision.gameObject.CompareTag("Vertigo"))
         {
-            GetComponent<Rigidbody2D>().gravityScale = 20;
-            SR.flipY = false;
+            GetComponent<Rigidbody2D>().gravityScale = 15;
+            transform.SetScaleY(1 * Mathf.Abs(scalay));
+            //SR.flipY = false;
         }
     }
 }

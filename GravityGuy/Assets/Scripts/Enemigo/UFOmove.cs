@@ -4,36 +4,51 @@ using UnityEngine;
 
 public class UFOmove : MonoBehaviour
 {
-    public GameObject goPoint1;
-    public GameObject goPoint2;
+    public GameObject goA;
+    public GameObject goB;
+    public GameObject goC;
+
+    GameObject goTarget;
+
     public float speed;
 
     void Start()
     {
-        GetComponent<Rigidbody2D>().velocity = speed * Vector2.right;
+        transform.position = goA.transform.position; // TELETRANSPORTAR A POSICION INICIAL
+        goTarget = goB;
+
+        MoveToTarget();
     }
+
     void FixedUpdate()
     {
+        float dist = Vector2.Distance(transform.position, goTarget.transform.position);
 
-
-        //goPoint1
-        RaycastHit2D hit1 = Physics2D.Raycast(goPoint1.transform.position, Vector2.up, 4);
-        Debug.DrawRay(goPoint1.transform.position, Vector3.up * 4, Color.green, Time.fixedDeltaTime);
-
-        //goPoint2
-        RaycastHit2D hit2 = Physics2D.Raycast(goPoint2.transform.position, Vector2.up, 4);
-        Debug.DrawRay(goPoint2.transform.position, Vector3.up * 4, Color.green, Time.fixedDeltaTime);
-
-        if (hit1.collider == null)
+        if (dist < 0.2f) // HEMOS LLEGADO
         {
-            GetComponent<SpriteRenderer>().flipX = false;
-            GetComponent<Rigidbody2D>().velocity = speed * Vector2.right;
+            if (goTarget == goA)
+            {
+                goTarget = goB;
+            }
+            else if (goTarget == goB)
+            {
+                goTarget = goC;
+            }
+            else if (goTarget == goC)
+            {
+                goTarget = goA;
+            }
+            MoveToTarget();
         }
-        if (hit2.collider == null)
-        {
-            GetComponent<SpriteRenderer>().flipX = true;
-            GetComponent<Rigidbody2D>().velocity = speed * Vector2.left;
-        }
+    }
+
+    void MoveToTarget()
+    {
+        Vector2 posActual = transform.position;
+        Vector2 posFinal = goTarget.transform.position;
+        Vector2 dir = (posFinal - posActual).normalized;
+
+        GetComponent<Rigidbody2D>().velocity = speed * dir;
     }
 }
 

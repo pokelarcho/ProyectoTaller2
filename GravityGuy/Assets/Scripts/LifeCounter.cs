@@ -36,7 +36,7 @@ public class LifeCounter : MonoBehaviour
     }
 
     private IEnumerator Pulse() {
-        Debug.Log(Vidas.text);
+        
         for (float i = 1f; i <= 1.2f; i += 0.05f)
         {
             Vidas.rectTransform.localScale = new Vector3(i, i, i);

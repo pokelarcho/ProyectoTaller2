@@ -32,7 +32,7 @@ public class GhostTrail : MonoBehaviour
     }
     private void Update()
     {
-        Debug.Log(cs.vertigo);
+        
 
         if(cs.vertigo == true)
             ghostsParent.SetScaleY(-1);
