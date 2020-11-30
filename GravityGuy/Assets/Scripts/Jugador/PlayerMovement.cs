@@ -220,6 +220,8 @@ public class PlayerMovement : MonoBehaviour
 
         }
 
+
+
     }
 /*
     private void OnCollisionExit2D(Collision2D collision)
