@@ -8,7 +8,7 @@ public class Poff : MonoBehaviour
     public float speed;
     public Vector2 direction;
 
-    public float timer;
+     float timer;
     public float maxTimer;
 
     void Start()
@@ -43,6 +43,11 @@ public class Poff : MonoBehaviour
         }
 
         if (collision.gameObject.CompareTag("Player"))
+        {
+            Destroy(this.gameObject);
+        }
+
+        if (collision.gameObject.CompareTag("Enemy"))
         {
             Destroy(this.gameObject);
         }

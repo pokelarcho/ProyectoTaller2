@@ -48,7 +48,7 @@ public class PlayerMovement : MonoBehaviour
 
     public int side = 1;
 
-    float time =0.00f;
+    
 
     [Space]
     [Header("Polish")]
@@ -143,16 +143,8 @@ public class PlayerMovement : MonoBehaviour
             {
 
                 rb.gravityScale = -10;
-
-                //transform.Rotate(new Vector3(180, 0, 0));
-                //sp.flipY = true;
-               /* time += Time.deltaTime;
-                if (time >= 0.6f)
-                {*/
-
-                    transform.SetScaleY(-1 * Mathf.Abs(scalay));
-                    /*time = 0;
-                }*/
+                transform.SetScaleY(-1 * Mathf.Abs(scalay));
+                
                 /* if (Cam)
                  {
                      CamPlay.GetComponent<Transform>().position = new Vector3(Camo.x, Camo.y, 10f);
@@ -163,14 +155,9 @@ public class PlayerMovement : MonoBehaviour
                 
                 rb.gravityScale = 10;
 
-              /*  time += Time.deltaTime;
-               / if (time >= 0.6f)
-                {*/
-                    transform.SetScaleY(1 * Mathf.Abs(scalay));
-                  /*  time = 0;
-                }
-                /* if (Cam)
-                 {
+                transform.SetScaleY(1 * Mathf.Abs(scalay));
+
+               /*  {
                      CamPlay.GetComponent<Transform>().position = new Vector3(Camo.x, Camo.y, -10f);
                  }
                 */
@@ -215,7 +202,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
-            //grounded = true;
+            
             isDashing = false;
 
         }
@@ -223,16 +210,7 @@ public class PlayerMovement : MonoBehaviour
 
 
     }
-/*
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Ground"))
-        {
-            //grounded = false;
 
-        }
-    }
-    */
 
 
     private void OnTriggerExit2D(Collider2D collision)

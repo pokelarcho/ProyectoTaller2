@@ -49,6 +49,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Colliders
+    uniqueID: 2743667257
+    locked: 0
   - name: CapaBackground
     uniqueID: 2521452173
     locked: 0

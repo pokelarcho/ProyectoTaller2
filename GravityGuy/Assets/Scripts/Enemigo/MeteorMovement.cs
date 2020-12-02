@@ -1,16 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using PowerTools;
 
 public class MeteorMovement : MonoBehaviour
 {
     public float moveSpeed = 5f;
     public Rigidbody2D rb;
     public Vector2 direccion;
+    SpriteAnim CompAnim;
+    public AnimationClip animdestruct;
     private float counter;
     // Start is called before the first frame update
 
-
+    private void Start()
+    {
+        CompAnim = GetComponent<SpriteAnim>();
+    }
 
 
     void Update()
@@ -19,7 +25,7 @@ public class MeteorMovement : MonoBehaviour
 
         counter += Time.deltaTime;
 
-        if (counter >= 2f)
+        if (counter >= 3f)
             Destroy(gameObject);
     }
 
@@ -28,13 +34,23 @@ public class MeteorMovement : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
-            Destroy(this.gameObject);
+            moveSpeed = 0;
+            CompAnim.Play(animdestruct);
+            
         }
 
         if (collision.gameObject.CompareTag("Player"))
         {
-            Destroy(this.gameObject);
+            moveSpeed = 0;
+            CompAnim.Play(animdestruct);
+            
         }
     }
 
+
+    public void Destroy()
+    {
+
+        Destroy(this.gameObject);
+    }
 }

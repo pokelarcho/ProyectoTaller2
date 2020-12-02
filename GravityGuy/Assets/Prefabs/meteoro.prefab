@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 8736697838029305480}
   - component: {fileID: 7721764295850823916}
   - component: {fileID: 1015306540944072912}
+  - component: {fileID: -4786997355360533564}
+  - component: {fileID: -1809320126948775318}
   m_Layer: 10
   m_Name: meteoro
   m_TagString: Enemy
@@ -28,8 +30,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7614013688544851168}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 22.909, y: 16.902, z: 0}
-  m_LocalScale: {x: 0.44554147, y: 0.44554147, z: 0.44554147}
+  m_LocalPosition: {x: 23.853, y: 18.061, z: 0}
+  m_LocalScale: {x: 5.292692, y: 5.292692, z: 5.292692}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -73,9 +75,10 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 55c94033f9dfb17458e19339ab5238f9, type: 3}
+  m_Sprite: {fileID: 5926820033352602387, guid: 2bb4ab988f63fbf4487b367f5f8f1b0a,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 5.12, y: 5.12}
@@ -120,6 +123,7 @@ MonoBehaviour:
   moveSpeed: 1.5
   rb: {fileID: 8736697838029305480}
   direccion: {x: 10, y: -10}
+  animdestruct: {fileID: 7400000, guid: 06388468b5a911f469506a327d336546, type: 2}
 --- !u!58 &1015306540944072912
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -133,6 +137,38 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 1.4533259, y: -0.94459546}
+  m_Offset: {x: 0.14316368, y: -0.1900124}
   serializedVersion: 2
-  m_Radius: 1.2450296
+  m_Radius: 0.07865673
+--- !u!95 &-4786997355360533564
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7614013688544851168}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-1809320126948775318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7614013688544851168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89a8ca009b14008429f621808bba2086, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_defaultAnim: {fileID: 7400000, guid: d0b25fb7ef471b34bb7a7502c1bdce9f, type: 2}

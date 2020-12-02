@@ -13,17 +13,19 @@ public class PlayerMagnet : MonoBehaviour
     public bool CoolActive;
     public float CoolDown;
     float timer;
-
+    public GameObject Prefab;
+    public GameObject Prefab2;
     Vector3 Dife;
     Vector3 DetEnt;
     Vector3 centro;
     RaycastHit2D hit;
     RaycastHit2D hit2;
-
+    Vector2 Direccion;
     Rigidbody2D monster;
     Rigidbody2D monsterspeed;
     Transform monster2;
     Patrulla slime;
+    SwitchPoleType stp;
 
     private PlayerMovement pm;
 
@@ -36,6 +38,7 @@ public class PlayerMagnet : MonoBehaviour
         centro = new Vector3(0f, 1f);
         direction = 1;
         pm = GetComponent<PlayerMovement>();
+        stp = GetComponentInChildren<SwitchPoleType>();
     }
     void FixedUpdate()
     {
@@ -124,10 +127,12 @@ public class PlayerMagnet : MonoBehaviour
         if (polo)
         {
             polo = false;
+            stp.switchToNegative();
         }
         else if (polo == false)
         {
             polo = true;
+            stp.switchToPositive();
         }
     }
     void Magnetismo()
@@ -141,7 +146,7 @@ public class PlayerMagnet : MonoBehaviour
                 magnetAction = true;
                 magnetism = false;
                 //slime.isMagneted = true;
-
+                Attract();
                 if (Detatrac())
                 {
                     monster2.position = transform.position + DetEnt + centro;
@@ -155,6 +160,7 @@ public class PlayerMagnet : MonoBehaviour
             {
                 magnetAction = true;
                 magnetism = false;
+                Attract();
                //slime.isMagneted = true;
                 if (Detatrac())
                 {
@@ -176,6 +182,7 @@ public class PlayerMagnet : MonoBehaviour
             {
                 magnetAction = true;
                 magnetism = true;
+                 Disparo();
                // slime.isMagneted = true;
 
                 if (Detatrac())
@@ -191,6 +198,7 @@ public class PlayerMagnet : MonoBehaviour
             {
                 magnetAction = true;
                 magnetism = true;
+                 Disparo();
                 //slime.isMagneted = true;
                 if (Detatrac())
                 {
@@ -241,4 +249,31 @@ public class PlayerMagnet : MonoBehaviour
             centro = new Vector3(0f, 1f);
         }
     }
+
+    void Disparo()
+    {
+        
+        if (direction==1)
+            Direccion.x = 1;
+        else
+            Direccion.x = -1;
+
+        Instantiate(Prefab, transform.position, transform.rotation);
+        Prefab.GetComponent<MagnetBehaiviour>().direction = Direccion;
+    }
+
+
+    void Attract()
+    {
+
+        if (direction == 1)
+            Direccion.x = 1;
+        else
+            Direccion.x = -1;
+
+        Instantiate(Prefab2, transform.position, transform.rotation);
+        Prefab.GetComponent<MagnetBehaiviour>().direction = Direccion;
+    }
+
+
 }
