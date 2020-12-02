@@ -32,7 +32,7 @@ public class RedDoor : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
 
-            if (pm.isDashing = true)
+            if (pm.isDashing == true)
             {
                 CompAnim.Play(animdestruct);
                 bx.isTrigger = true;

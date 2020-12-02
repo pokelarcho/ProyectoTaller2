@@ -146,13 +146,13 @@ public class PlayerMovement : MonoBehaviour
 
                 //transform.Rotate(new Vector3(180, 0, 0));
                 //sp.flipY = true;
-                time += Time.deltaTime;
+               /* time += Time.deltaTime;
                 if (time >= 0.6f)
-                {
+                {*/
 
                     transform.SetScaleY(-1 * Mathf.Abs(scalay));
-                    time = 0;
-                }
+                    /*time = 0;
+                }*/
                 /* if (Cam)
                  {
                      CamPlay.GetComponent<Transform>().position = new Vector3(Camo.x, Camo.y, 10f);
@@ -163,11 +163,11 @@ public class PlayerMovement : MonoBehaviour
                 
                 rb.gravityScale = 10;
 
-                time += Time.deltaTime;
-                if (time >= 0.6f)
-                {
+              /*  time += Time.deltaTime;
+               / if (time >= 0.6f)
+                {*/
                     transform.SetScaleY(1 * Mathf.Abs(scalay));
-                    time = 0;
+                  /*  time = 0;
                 }
                 /* if (Cam)
                  {

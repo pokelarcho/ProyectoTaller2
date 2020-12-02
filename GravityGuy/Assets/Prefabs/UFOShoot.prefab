@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 362488065548979390}
   - component: {fileID: 403667079218875506}
   - component: {fileID: 1576440015713686933}
+  - component: {fileID: 2158581059938179608}
+  - component: {fileID: 1387606714740449812}
   m_Layer: 0
   m_Name: UFOShoot
   m_TagString: Enemy
@@ -150,3 +152,35 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   polo: 0
+--- !u!95 &2158581059938179608
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6383192927897023212}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1387606714740449812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6383192927897023212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89a8ca009b14008429f621808bba2086, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_defaultAnim: {fileID: 7400000, guid: ef76d3dfddd66e14391be0128b7d9fd0, type: 2}

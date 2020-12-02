@@ -33,4 +33,18 @@ public class Poff : MonoBehaviour
     {
         rb2d.velocity = direction * speed;
     }
+
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            Destroy(this.gameObject);
+        }
+
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Destroy(this.gameObject);
+        }
+    }
 }
