@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2784243010850230623}
   - component: {fileID: 4087799352242074441}
   - component: {fileID: 2355330132560609052}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Repulsion_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -179,5 +179,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 100
-  direction: {x: 0, y: 0}
+  direction: {x: -1, y: 0}
   maxTimer: 0.3

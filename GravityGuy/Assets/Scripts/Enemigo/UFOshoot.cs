@@ -8,30 +8,30 @@ public class UFOshoot : MonoBehaviour
     public float spawmtime;
     float timer;
 
-    public float radio;
-
-
     public GameObject bulletPrefab;
     public GameObject Player;
     public float BulletSpeed;
     GameObject BS;
 
     Vector2 dir;
-    RaycastHit2D hit;
 
     private void Start()
     {
         dir = (transform.position - Player.transform.position).normalized;
+        //BS.GetComponent<Rigidbody2D>().velocity = BulletSpeed * dir;
     }
-    void FixedUpdate()
+    void Update()
     {
-        Rayo();
+        
     }
-    void Spawner()
+   public void Spawner()
     {
-        timer += Time.deltaTime;
-        if (timer >= spawmtime)
-        {
+
+        float dist = Vector3.Distance(Player.transform.position, transform.position);
+
+        if(dist < 26)
+        { 
+
             BS = Instantiate(bulletPrefab, transform.position, transform.rotation);
             timer = 0;
             PlayerPosicion();
@@ -41,19 +41,6 @@ public class UFOshoot : MonoBehaviour
     {
         dir = (Player.transform.position - transform.position).normalized;
         BS.GetComponent<Rigidbody2D>().velocity = BulletSpeed * dir;
-    }
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.green;
-        Gizmos.DrawSphere(transform.position, radio);
-    }
-    void Rayo()
-    {
-        hit = Physics2D.CircleCast(transform.position, radio, new Vector2(0f, 0f));
-        if (hit.collider != null && hit.collider.CompareTag("Player"))
-        {
-            Spawner();
-        }
     }
 }
 

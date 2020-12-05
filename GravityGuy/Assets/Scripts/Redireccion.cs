@@ -5,9 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class Redireccion : MonoBehaviour
 {
+
+    public Animator transition;
     public void Change(string sceneName)
     {
-        SceneManager.LoadScene(sceneName);
+        StartCoroutine(LoadLevel(sceneName));
+        
     }
 
     public void Quit() {
@@ -23,6 +26,13 @@ public class Redireccion : MonoBehaviour
         Time.timeScale = 1f;
     }
 
- 
 
+    IEnumerator LoadLevel(string sceneName) {
+
+        transition.SetTrigger("start");
+
+        yield return new WaitForSeconds(1f);
+
+        SceneManager.LoadScene(sceneName);
+    }
 }

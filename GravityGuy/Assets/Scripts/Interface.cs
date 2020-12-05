@@ -2,16 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Interface : MonoBehaviour
 {
-
+    public static Interface instance;
     public Sprite plusBoy;
     public Sprite plusGirl;
     public Sprite minusBoy;
     public Sprite minusGirl;
-
+    
     public SpriteRenderer sr;
-
+    public ParticleSystem poleEffect;
     private GameObject PlayerBoy;
     private PlayerMagnet pmag;
 
@@ -21,6 +22,11 @@ public class Interface : MonoBehaviour
         PlayerBoy = GameObject.Find("PlayerBoy");
         pmag = PlayerBoy.GetComponent<PlayerMagnet>();
         sr = GetComponent<SpriteRenderer>();
+    }
+
+    private void Awake()
+    {
+        instance = this;
     }
 
     // Update is called once per frame
@@ -40,5 +46,13 @@ public class Interface : MonoBehaviour
             else
                 sr.sprite = minusGirl;
         }
+    }
+
+
+    public void PoleEffector(bool Cooldown) {
+
+        var emission = poleEffect.emission;
+        emission.enabled = !Cooldown;
+
     }
 }

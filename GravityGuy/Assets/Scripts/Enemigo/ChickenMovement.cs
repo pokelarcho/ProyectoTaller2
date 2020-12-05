@@ -17,6 +17,7 @@ public class ChickenMovement : MonoBehaviour
     public AnimationClip animwalk;
     SpriteRenderer SR;
     Rigidbody2D Rb2D;
+    bool anim1=false, anim2=false;
 
     void Start()
     {
@@ -30,6 +31,14 @@ public class ChickenMovement : MonoBehaviour
     {
         RAYO();
         Detect();
+
+        if (anim1) {
+            if (anim2 == false)
+            {
+                CompAnim.Play(animwalk);
+                anim2 = true;
+            }
+        }
     }
     void RAYO()
     {
@@ -42,16 +51,19 @@ public class ChickenMovement : MonoBehaviour
     {
         if (hit.collider != null && hit.collider.gameObject.CompareTag("Player"))
         {
-            SR.flipX = false;
+            SR.flipX = true;
             Rb2D.velocity = new Vector2(speed, Rb2D.velocity.y);
-            CompAnim.Play(animwalk);
+            anim1 = true;
         }
         else if (hit2.collider != null && hit2.collider.gameObject.CompareTag("Player"))
         {
-            SR.flipX = true;
+            SR.flipX = false;
             Rb2D.velocity = new Vector2(speed * -1, Rb2D.velocity.y);
-            CompAnim.Play(animwalk);
+            anim1 = true;
+            
         }
+       
+
     }
 
   

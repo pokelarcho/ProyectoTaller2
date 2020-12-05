@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using PowerTools;
 
 public class Patrulla : MonoBehaviour
 {
@@ -14,7 +13,6 @@ public class Patrulla : MonoBehaviour
     Rigidbody2D rb2d;
     RaycastHit2D hit;
     SpriteRenderer SR;
-    SpriteAnim CompAnim;
     public bool isMagneted = false;
 
     void Start()
@@ -22,8 +20,8 @@ public class Patrulla : MonoBehaviour
         Dife = new Vector3(1f, 0f, 0f);
         centro = new Vector3(0f, 0.1f, 0f);
         rb2d = GetComponent<Rigidbody2D>();
-        CompAnim = GetComponent<SpriteAnim>();
-        SR = GetComponent<SpriteRenderer>();
+        
+        SR = GetComponentInChildren<SpriteRenderer>();
         
     }
     void Update()
@@ -31,25 +29,26 @@ public class Patrulla : MonoBehaviour
 
 
         //TESTEAR BIEN
-        if (isMagneted == false)
+        if (!isMagneted)
         {
             Move();
         }
         else
         {
             speed = 0;
+            //StopCoroutine(RestartMovement());
             StartCoroutine(RestartMovement());
         }
         Rayo();
         Cambio();
-        //Animar();
+       Animar();
     }
 
     IEnumerator RestartMovement()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(1f);
         isMagneted = false;
-        speed = 15;
+        speed = 5;
     }
     void Rayo()
     {
@@ -64,19 +63,21 @@ public class Patrulla : MonoBehaviour
             Debug.DrawRay(transform.position - Dife + centro, Vector2.left * 2, Color.green);
         }
     }
+
+    public void setMagnetism() {
+        isMagneted = true;
+    }
+
     void Move()
     {
         rb2d.velocity = new Vector2(speed, rb2d.velocity.y);
     }
-   /* void Animar()
+   void Animar()
     {
         if (speed != 0)
         {
-            if (CompAnim.Clip != animRun)
-            {
-                CompAnim.Play(animRun);
-            }
-            else if (speed > 0)
+           
+            if (speed > 0)
             {
                 SR.flipX = true;
             }
@@ -85,14 +86,8 @@ public class Patrulla : MonoBehaviour
                 SR.flipX = false;
             }
         }
-        else
-        {
-            if (CompAnim.Clip != animIdle)
-            {
-                CompAnim.Play(animIdle);
-            }
-        }
-    }*/
+        
+    }
     void Cambio()
     {
         if (hit.collider != null && hit.collider.tag != "Player")

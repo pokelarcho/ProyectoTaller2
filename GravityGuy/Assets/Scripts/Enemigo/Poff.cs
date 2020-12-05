@@ -47,9 +47,6 @@ public class Poff : MonoBehaviour
             Destroy(this.gameObject);
         }
 
-        if (collision.gameObject.CompareTag("Enemy"))
-        {
-            Destroy(this.gameObject);
-        }
+        
     }
 }
