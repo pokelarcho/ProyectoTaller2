@@ -35,4 +35,7 @@ public class Redireccion : MonoBehaviour
 
         SceneManager.LoadScene(sceneName);
     }
+
+
+
 }

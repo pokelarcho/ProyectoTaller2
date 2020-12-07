@@ -1276,6 +1276,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1915041404538152882, guid: 289095c1a6e460a498b711051e77d2e3,
+        type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 519420031}
     - target: {fileID: 2114895691354446820, guid: 289095c1a6e460a498b711051e77d2e3,
         type: 3}
       propertyPath: m_IsActive
@@ -1341,11 +1346,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelLoader
       objectReference: {fileID: 0}
+    - target: {fileID: 6440987441174850432, guid: 289095c1a6e460a498b711051e77d2e3,
+        type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 519420031}
     - target: {fileID: 7647946862223705065, guid: 289095c1a6e460a498b711051e77d2e3,
         type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7701498311175015172, guid: 289095c1a6e460a498b711051e77d2e3,
+        type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 519420031}
     - target: {fileID: 7888862373399110200, guid: 289095c1a6e460a498b711051e77d2e3,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -1359,6 +1374,11 @@ PrefabInstance:
     - target: {fileID: 8549065689861796286, guid: 289095c1a6e460a498b711051e77d2e3,
         type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8989629046950146450, guid: 289095c1a6e460a498b711051e77d2e3,
+        type: 3}
+      propertyPath: m_Alpha
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
