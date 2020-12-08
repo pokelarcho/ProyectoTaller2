@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class Redir : MonoBehaviour
 {
+
+    public Animator transition;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +23,19 @@ public class Redir : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            SceneManager.LoadScene("PantallaPrincipal");
+            StartCoroutine(LoadLevel("PantallaPrincipal"));
+            
         }
     }
+
+    IEnumerator LoadLevel(string sceneName)
+    {
+
+        transition.SetTrigger("start");
+
+        yield return new WaitForSeconds(1f);
+
+        SceneManager.LoadScene(sceneName);
+    }
+
 }

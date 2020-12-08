@@ -70,7 +70,7 @@ public class Alien : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.name == "Arma")
+        if (collision.gameObject.name == "Enemy")
         {
             tienePistola = false;
         }

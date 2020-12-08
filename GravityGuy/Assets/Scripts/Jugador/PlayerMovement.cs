@@ -142,7 +142,7 @@ public class PlayerMovement : MonoBehaviour
             if (vertigo == true)
             {
 
-                rb.gravityScale = -10;
+                rb.gravityScale = -8;
                 transform.SetScaleY(-1 * Mathf.Abs(scalay));
                 
                 /* if (Cam)
@@ -153,7 +153,7 @@ public class PlayerMovement : MonoBehaviour
             else
             {
                 
-                rb.gravityScale = 10;
+                rb.gravityScale = 8;
 
                 transform.SetScaleY(1 * Mathf.Abs(scalay));
 
@@ -338,9 +338,9 @@ public class PlayerMovement : MonoBehaviour
 
         dashParticle.Stop();
         if(vertigo)
-            rb.gravityScale = -20;
+            rb.gravityScale = -8;
         else
-            rb.gravityScale = 20;
+            rb.gravityScale = 8;
         
         GetComponent<BetterJumping>().enabled = true;
         
