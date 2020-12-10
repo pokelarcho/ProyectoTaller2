@@ -1,7 +1,88 @@
 fileFormatVersion: 2
 guid: c9db3cef750452c4481e90d82b8ae7f8
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -7112458395338814165
+    second: Arbol_0
+  - first:
+      213: 7847440338805849503
+    second: Arbol_0
+  - first:
+      213: 2259804811625579385
+    second: Arbol_1
+  - first:
+      213: -3155124080321939543
+    second: Arbol_2
+  - first:
+      213: -3839547494237997090
+    second: Arbol_3
+  - first:
+      213: -3461152011100648717
+    second: Arbol_4
+  - first:
+      213: -6802585979010775632
+    second: Arbol_5
+  - first:
+      213: -1212312243479028548
+    second: Arbol_6
+  - first:
+      213: 6341686859053045199
+    second: Arbol_7
+  - first:
+      213: -9116992258509683644
+    second: Arbol_8
+  - first:
+      213: 3160199858774690929
+    second: Arbol_9
+  - first:
+      213: -9096631236900813280
+    second: Arbol_10
+  - first:
+      213: 4923446008509303868
+    second: Arbol_11
+  - first:
+      213: 6853746319464946930
+    second: Arbol_12
+  - first:
+      213: -8443831205428326207
+    second: Arbol_13
+  - first:
+      213: -8114412042128827967
+    second: Arbol_14
+  - first:
+      213: 6509721390677908239
+    second: Arbol_15
+  - first:
+      213: 2921979976266770602
+    second: Arbol_16
+  - first:
+      213: 637512916844613162
+    second: Arbol_17
+  - first:
+      213: 6332427074468036076
+    second: Arbol_18
+  - first:
+      213: 7918629129939553784
+    second: Arbol_19
+  - first:
+      213: -5869486444183359920
+    second: Arbol_20
+  - first:
+      213: 6935802613512867670
+    second: Arbol_21
+  - first:
+      213: -3888064811354786114
+    second: Arbol_22
+  - first:
+      213: -826048742999910966
+    second: Arbol_23
+  - first:
+      213: -1896699712759086636
+    second: Arbol_24
+  - first:
+      213: -6278548331737653229
+    second: Arbol_25
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -40,13 +121,13 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteBorder: {x: 0, y: 26, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -109,7 +190,28 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Arbol_0
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 26
+        width: 71
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9df79e1965b7ec60800000000000000
+      internalID: 7847440338805849503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
