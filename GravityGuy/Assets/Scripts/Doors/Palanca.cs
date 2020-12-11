@@ -28,4 +28,16 @@ public class Palanca : MonoBehaviour
             }
         }
     }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            if (pm.isDashing == true)
+            {
+                Active = true;
+                sr.sprite = SpriteChange;
+            }
+        }
+    }
 }

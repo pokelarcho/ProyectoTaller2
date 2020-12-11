@@ -42,6 +42,20 @@ public class RedDoor : MonoBehaviour
 
     }
 
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+
+            if (pm.isDashing == true)
+            {
+                CompAnim.Play(animdestruct);
+                bx.isTrigger = true;
+            }
+
+        }
+    }
+
     public void destruirPuerta() {
 
         Destroy(this.gameObject);
