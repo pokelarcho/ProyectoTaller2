@@ -24,7 +24,7 @@ public class UFOmove : MonoBehaviour
     {
         float dist = Vector2.Distance(transform.position, goTarget.transform.position);
 
-        if (dist < 0.3f) // HEMOS LLEGADO
+        if (dist < 0.5f) // HEMOS LLEGADO
         {
             if (goTarget == goA)
             {

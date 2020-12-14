@@ -10,17 +10,28 @@ public class Pause : MonoBehaviour
     public GameObject LivesUI;
     public GameObject x;
     public GameObject Lives;
+    public AudioClip sfxPush;
+    AudioSource ads;
 
+
+    private void Start()
+    {
+        ads = GetComponent<AudioSource>();
+    }
     // Update is called once per frame
     void Update()
     {
+
+       
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if(GameIsPaused){
                 Resume();
+                ads.PlayOneShot(sfxPush);
             }
             else{
                 Pausa();
+                ads.PlayOneShot(sfxPush);
             }
         }
     }

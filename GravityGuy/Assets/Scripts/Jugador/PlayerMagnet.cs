@@ -27,7 +27,13 @@ public class PlayerMagnet : MonoBehaviour
     Transform monster2;
     Patrulla slime;
     SwitchPoleType stp;
-    
+    public AudioClip sfxrepeler;
+    public AudioClip sfxatraer;
+    public AudioClip sfxcambioPolo;
+    public AudioClip sfxcooldown;
+    AudioSource ads;
+    bool noreprod=false;
+
 
     private PlayerMovement pm;
 
@@ -40,6 +46,7 @@ public class PlayerMagnet : MonoBehaviour
         DetEntIzq = new Vector3(3.1f, 0f);
         centro = new Vector3(0f, 1f);
         direction = 1;
+        ads = GetComponent<AudioSource>();
         pm = GetComponent<PlayerMovement>();
         stp = GetComponentInChildren<SwitchPoleType>();
     }
@@ -53,19 +60,34 @@ public class PlayerMagnet : MonoBehaviour
        
         if (Input.GetKey(KeyCode.S) )
         {
-            if( Input.GetKeyDown(KeyCode.L))
+            if (Input.GetKeyDown(KeyCode.L))
+            {
+                ads.PlayOneShot(sfxcambioPolo);
                 DetPolo();
+            }
         }
-        if (Input.GetKey(KeyCode.L) && !CoolActive )
+        if (Input.GetKey(KeyCode.L) && !CoolActive)
         {
             if (!Input.GetKey(KeyCode.S))
             {
                 if (polo)
+                {
                     Repel();
+
+                }
+
+
                 if (!polo)
+                {
+
                     Attract();
+                }
             }
-         }
+        }
+        else if (Input.GetKeyDown(KeyCode.L) && CoolActive) {
+                    ads.PlayOneShot(sfxcooldown);
+
+        }
         //si cambia polo mientras atrae, repeler al soltar la tecla
         if (Input.GetKeyUp(KeyCode.L))
         {
@@ -75,14 +97,16 @@ public class PlayerMagnet : MonoBehaviour
                 if (!magnetism)
                 {
                     DetPolo();
+                    noreprod = false;
                     Repel();
                     hit = new RaycastHit2D();
                     hit2 = new RaycastHit2D();
                 }
-                Debug.Log("OE");
+                
                 CoolActive = true;
                 Interface.instance.PoleEffector(CoolActive);
                 magnetAction = false;
+                noreprod = false;
             }
             
         }
@@ -140,6 +164,8 @@ public class PlayerMagnet : MonoBehaviour
     {
         //true es positivo
         //false es negativo
+
+       
         if (polo)
         {
             polo = false;
@@ -152,6 +178,7 @@ public class PlayerMagnet : MonoBehaviour
             magnetism = true;
             stp.switchToPositive();
         }
+
     }
    
     void Attract() {
@@ -180,8 +207,7 @@ public class PlayerMagnet : MonoBehaviour
                 magnetAction = true;
                 magnetism = false;
                 AttractEffect();
-              /*  if (slime != null)
-                    slime.setMagnetism();*/
+                ReproducirSonido(sfxatraer);
 
                 if (Detatrac())
                 {
@@ -239,7 +265,7 @@ public class PlayerMagnet : MonoBehaviour
                 magnetAction = true;
                 magnetism = true;
                 RepelEffect();
-
+                ReproducirSonido(sfxrepeler);
                 if (slime!=null)
                     slime.setMagnetism();
 
@@ -257,6 +283,20 @@ public class PlayerMagnet : MonoBehaviour
 
         }
        
+    }
+
+
+    void ReproducirSonido(AudioClip a)
+    {
+        if (magnetAction)
+        {
+            if (noreprod == false)
+            {
+                ads.PlayOneShot(a);
+                noreprod = true;
+
+            }
+        }
     }
 
 

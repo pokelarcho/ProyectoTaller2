@@ -48,7 +48,16 @@ public class PlayerMovement : MonoBehaviour
 
     public int side = 1;
 
-    
+
+    [Space]
+    [Header("Audio")]
+    public AudioClip sfxaterrizaje;
+    public AudioClip sfxsalto;
+    public AudioClip sfxdash;
+    public AudioClip sfxInvertir;
+    AudioSource ads;
+    public bool stop=false;
+
 
     [Space]
     [Header("Polish")]
@@ -59,6 +68,7 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        ads = GetComponent<AudioSource>();
         coll = GetComponent<Collision>();
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponentInChildren<AnimationScript>();
@@ -99,6 +109,7 @@ public class PlayerMovement : MonoBehaviour
                 {
 
                     Jump(Vector2.up);
+                    ads.PlayOneShot(sfxsalto);
                     anim.SetTrigger("jump");
 
                 }
@@ -141,7 +152,7 @@ public class PlayerMovement : MonoBehaviour
             float scalay = transform.GetScaleY();
             if (vertigo == true)
             {
-
+                
                 rb.gravityScale = -8;
                 transform.SetScaleY(-1 * Mathf.Abs(scalay));
                 
@@ -175,13 +186,13 @@ public class PlayerMovement : MonoBehaviour
             isDashing = true;
             if (vertigo)
             {
-                
-                 vertigo = false;
+                ads.PlayOneShot(sfxInvertir);
+                vertigo = false;
                 
             }
             else
             {
-                
+                ads.PlayOneShot(sfxInvertir);
                 vertigo = true;
 
             }
@@ -191,11 +202,32 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.CompareTag("Vertigo"))
         {
 
-
+            StopReproducing();
             vertigo = true;
 
 
         }
+    }
+
+    void StopReproducing() {
+        if (vertigo)
+        {
+            if (stop == false)
+            {
+                ads.PlayOneShot(sfxInvertir);
+                stop = true;
+            }
+        }
+        else
+        {
+            if (stop == false)
+            {
+                ads.PlayOneShot(sfxInvertir);
+                stop = true;
+            }
+        }
+
+
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -218,6 +250,8 @@ public class PlayerMovement : MonoBehaviour
        if (collision.gameObject.CompareTag("Vertigo"))
         {
             vertigo = false;
+            stop = false;
+            ads.PlayOneShot(sfxInvertir);
         }
     }
 
@@ -270,7 +304,7 @@ public class PlayerMovement : MonoBehaviour
         isDashing = false;
 
        side = anim.sr.flipX ? -1 : 1;
-     
+        ads.PlayOneShot(sfxaterrizaje);
         jumpParticle.Play();
     }
 
@@ -290,7 +324,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Dash(float x, float y)
     {
-
+        ads.PlayOneShot(sfxdash);
         anim.SetTrigger("dash");
 
         //Cinemachine.impul

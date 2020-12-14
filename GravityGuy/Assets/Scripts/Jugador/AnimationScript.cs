@@ -17,17 +17,20 @@ public class AnimationScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        
         anim = GetComponent<Animator>();
+
+        if (PlayerSelect.genre == 1)
+            anim.runtimeAnimatorController = cBoy;
+        else
+            anim.runtimeAnimatorController = cGirl;
+
         move = GetComponentInParent<PlayerMovement>();
         death = GetComponentInParent<Death>();
         playermag = GetComponentInParent<PlayerMagnet>();
         sr = GetComponent<SpriteRenderer>();
 
-        if(PlayerSelect.genre == 1)
-            anim.runtimeAnimatorController = cBoy;
-        else
-            anim.runtimeAnimatorController = cGirl;
+       
     }
 
     // Update is called once per frame

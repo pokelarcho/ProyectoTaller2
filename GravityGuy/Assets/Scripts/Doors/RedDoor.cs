@@ -11,6 +11,8 @@ public class RedDoor : MonoBehaviour
     SpriteAnim CompAnim;
     public AnimationClip animdestruct;
     BoxCollider2D bx;
+    public AudioClip sfxDestruct;
+    AudioSource ads;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +20,8 @@ public class RedDoor : MonoBehaviour
         pm = PlayerBoy.GetComponent<PlayerMovement>();
         CompAnim = GetComponent<SpriteAnim>();
         bx = GetComponent<BoxCollider2D>();
+        ads = GetComponent<AudioSource>();
+
     }
 
     // Update is called once per frame
@@ -34,6 +38,7 @@ public class RedDoor : MonoBehaviour
 
             if (pm.isDashing == true)
             {
+                ads.PlayOneShot(sfxDestruct);
                 CompAnim.Play(animdestruct);
                 bx.isTrigger = true;
             }
@@ -49,6 +54,7 @@ public class RedDoor : MonoBehaviour
 
             if (pm.isDashing == true)
             {
+                ads.PlayOneShot(sfxDestruct);
                 CompAnim.Play(animdestruct);
                 bx.isTrigger = true;
             }

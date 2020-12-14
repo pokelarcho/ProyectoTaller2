@@ -9,9 +9,11 @@ public class Palanca : MonoBehaviour
     GameObject PlayerBoy;
     PlayerMovement pm;
     SpriteRenderer sr;
-
+    public AudioClip sfxPush;
+    AudioSource ads;
     void Start()
     {
+        ads = GetComponent<AudioSource>();
         PlayerBoy = GameObject.Find("PlayerBoy");
         pm = PlayerBoy.GetComponent<PlayerMovement>();
         sr = GetComponent<SpriteRenderer>();
@@ -23,6 +25,7 @@ public class Palanca : MonoBehaviour
         {
             if (pm.isDashing == true)
             {
+                ads.PlayOneShot(sfxPush);
                 Active = true;
                 sr.sprite = SpriteChange;
             }
@@ -35,6 +38,7 @@ public class Palanca : MonoBehaviour
         {
             if (pm.isDashing == true)
             {
+                ads.PlayOneShot(sfxPush);
                 Active = true;
                 sr.sprite = SpriteChange;
             }

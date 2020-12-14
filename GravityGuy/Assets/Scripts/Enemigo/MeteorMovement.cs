@@ -11,11 +11,16 @@ public class MeteorMovement : MonoBehaviour
     SpriteAnim CompAnim;
     public AnimationClip animdestruct;
     private float counter;
+    public AudioClip sfxPush;
+    AudioSource ads;
+    public GameObject Player;
     // Start is called before the first frame update
 
     private void Start()
     {
+        ads = GetComponent<AudioSource>();
         CompAnim = GetComponent<SpriteAnim>();
+        Player = GameObject.Find("PlayerBoy");
     }
 
 
@@ -34,6 +39,12 @@ public class MeteorMovement : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
+            float dist = Vector3.Distance(Player.transform.position, transform.position);
+
+            if (dist < 26)
+            {
+                ads.PlayOneShot(sfxPush);
+            }
             moveSpeed = 0;
             CompAnim.Play(animdestruct);
             
@@ -41,6 +52,7 @@ public class MeteorMovement : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Player"))
         {
+            ads.PlayOneShot(sfxPush);
             moveSpeed = 0;
             CompAnim.Play(animdestruct);
             

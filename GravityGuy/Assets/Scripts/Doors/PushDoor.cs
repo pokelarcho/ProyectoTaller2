@@ -11,12 +11,14 @@ public class PushDoor : MonoBehaviour
     SpriteAnim CompAnim;
     public AnimationClip animdestruct;
     bool anim2=false;
-
+    public AudioClip sfxDestruct;
+    AudioSource ads;
     void Start()
     {
         p = palanca.GetComponent<Palanca>();
         bx = GetComponent<BoxCollider2D>();
         CompAnim = GetComponent<SpriteAnim>();
+        ads = GetComponent<AudioSource>();
     }
     void Update()
     {
@@ -24,7 +26,7 @@ public class PushDoor : MonoBehaviour
         {
             if (anim2 == false)
             {
-                CompAnim.Play(animdestruct);
+                StartCoroutine(Destruir());
 
                 bx.isTrigger = true;
             }
@@ -35,5 +37,16 @@ public class PushDoor : MonoBehaviour
     public void destruirPuerta()
     {
         Destroy(this.gameObject);
+    }
+
+
+    IEnumerator Destruir()
+    {
+        
+        yield return new WaitForSeconds(1f);
+        ads.PlayOneShot(sfxDestruct);
+        CompAnim.Play(animdestruct);
+
+
     }
 }

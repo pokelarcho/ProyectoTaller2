@@ -11,9 +11,12 @@ public class HangarDoor : MonoBehaviour
     SpriteAnim CompAnim;
     bool anim2 = false;
     public bool anim1 = false;
+    public AudioClip sfxHangar;
+    AudioSource ads;
     // Start is called before the first frame update
     void Start()
     {
+        ads = GetComponent<AudioSource>();
         CompAnim = GetComponent<SpriteAnim>();
         bx = collider.GetComponent<BoxCollider2D>();
     }
@@ -32,9 +35,9 @@ public class HangarDoor : MonoBehaviour
         {
             if (anim2 == false)
             {
-                CompAnim.Play(animOpen);
-
                 
+                ads.PlayOneShot(sfxHangar);
+                StartCoroutine(Abrir());
             }
             anim2 = true;
         }
@@ -46,6 +49,13 @@ public class HangarDoor : MonoBehaviour
         bx.isTrigger = true;
     }
 
+    IEnumerator Abrir()
+    {
 
+        yield return new WaitForSeconds(0.9f);
+        CompAnim.Play(animOpen);
+
+
+    }
 
 }

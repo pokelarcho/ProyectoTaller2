@@ -23,7 +23,7 @@ public class Redir : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            StartCoroutine(LoadLevel("PantallaPrincipal"));
+            StartCoroutine(LoadLevel("Nivel2"));
             
         }
     }

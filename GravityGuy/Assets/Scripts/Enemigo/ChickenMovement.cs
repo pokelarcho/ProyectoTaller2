@@ -18,6 +18,9 @@ public class ChickenMovement : MonoBehaviour
     SpriteRenderer SR;
     Rigidbody2D Rb2D;
     bool anim1=false, anim2=false;
+    public AudioClip Caminar;
+    public AudioClip Explotar;
+    AudioSource ads;
 
     void Start()
     {
@@ -25,6 +28,7 @@ public class ChickenMovement : MonoBehaviour
         SR = GetComponent<SpriteRenderer>();
         Rb2D = GetComponent<Rigidbody2D>();
         CompAnim = GetComponent<SpriteAnim>();
+        ads = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -36,6 +40,7 @@ public class ChickenMovement : MonoBehaviour
             if (anim2 == false)
             {
                 CompAnim.Play(animwalk);
+                ads.PlayOneShot(Caminar);
                 anim2 = true;
             }
         }
@@ -75,13 +80,13 @@ public class ChickenMovement : MonoBehaviour
         {
             
             CompAnim.Play(animdestruct);
-
+            ads.PlayOneShot(Explotar);
         }
     }
 
     public void Destroy()
     {
-
+        
         Destroy(this.gameObject);
     }
 }

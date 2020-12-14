@@ -13,13 +13,19 @@ public class Death : MonoBehaviour
     public bool isDeath;
     public bool invencible= false;
     public float timeInvencible;
-   // private AnimationScript anim;
+
+    public AudioClip sfxmuerte;
+    public AudioClip sfxvidas;
+    public AudioClip sfxcheckpoint;
+    
+    AudioSource ads;
+    // private AnimationScript anim;
     // Start is called before the first frame update
     void Start()
     {
         isDeath = false;
         PM = GetComponent<PlayerMovement>();
-        
+        ads = GetComponent<AudioSource>();
         //creacion de CheckPoint
         Checkpoint = transform.position;
 
@@ -60,11 +66,13 @@ public class Death : MonoBehaviour
             if (collision.gameObject.CompareTag("CheckPoint"))
             {
                 Checkpoint = transform.position;
-            }
+                ads.PlayOneShot(sfxcheckpoint);
+        }
 
         if (collision.gameObject.CompareTag("Lives"))
         {
             lives++;
+            ads.PlayOneShot(sfxvidas);
             LC.UpdateText(lives);
 
 
@@ -128,7 +136,7 @@ public class Death : MonoBehaviour
         if (!invencible)
         {
             PM.speed = 0;
-
+            ads.PlayOneShot(sfxmuerte);
             isDeath = true;
             invencible = true;
             lives--;
