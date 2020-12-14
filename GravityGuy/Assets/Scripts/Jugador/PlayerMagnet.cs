@@ -33,8 +33,8 @@ public class PlayerMagnet : MonoBehaviour
     public AudioClip sfxcooldown;
     AudioSource ads;
     bool noreprod=false;
-
-
+    public ParticleSystem poleEffect;
+    
     private PlayerMovement pm;
 
     public bool magnetAction; //verifica si se esta usando la accion
@@ -49,6 +49,9 @@ public class PlayerMagnet : MonoBehaviour
         ads = GetComponent<AudioSource>();
         pm = GetComponent<PlayerMovement>();
         stp = GetComponentInChildren<SwitchPoleType>();
+
+        var emission = poleEffect.emission;
+        emission.enabled = false;
     }
 
    
@@ -96,6 +99,8 @@ public class PlayerMagnet : MonoBehaviour
             {
                 if (!magnetism)
                 {
+                    var emission = poleEffect.emission;
+                    emission.enabled = false;
                     DetPolo();
                     noreprod = false;
                     Repel();
@@ -350,14 +355,8 @@ public class PlayerMagnet : MonoBehaviour
 
     void AttractEffect()
     {
-
-        if (direction == 1)
-            Direccion.x = 1;
-        else
-            Direccion.x = -1;
-
-        Instantiate(Prefab2, transform.position - Dife + centro, transform.rotation);
-        Prefab.GetComponent<MagnetBehaiviour>().direction = Direccion;
+        var emission = poleEffect.emission;
+        emission.enabled = true;
     }
 
 
