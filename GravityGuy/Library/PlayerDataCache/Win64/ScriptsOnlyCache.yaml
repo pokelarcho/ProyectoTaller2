@@ -35,6 +35,7 @@ ScriptsOnlyBuild:
     - PlayerMovement
     - Poff
     - PoleType
+    - PressEnter
     - PushDoor
     - RedDoor
     - Redir
@@ -80,8 +81,10 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -136,6 +139,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 11622}
     - Class: 114
       Script: {instanceID: 12826}
+    - Class: 114
+      Script: {instanceID: 13174}
     - Class: 114
       Script: {instanceID: 13382}
     - Class: 114
@@ -656,6 +661,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 14582}
     - Class: 114
       Script: {instanceID: 14764}
+    - Class: 114
+      Script: {instanceID: 25592}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -663,6 +670,10 @@ ScriptsOnlyBuild:
     - Class: 157
       Script: {instanceID: 0}
     - Class: 196
+      Script: {instanceID: 0}
+    - Class: 198
+      Script: {instanceID: 0}
+    - Class: 199
       Script: {instanceID: 0}
     - Class: 212
       Script: {instanceID: 0}
@@ -796,6 +807,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 11622}
     - Class: 114
       Script: {instanceID: 12826}
+    - Class: 114
+      Script: {instanceID: 13174}
     - Class: 114
       Script: {instanceID: 13382}
     - Class: 114
@@ -2067,6 +2080,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: dba57f9a80219915f4e596d160361de3
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PressEnter
   platform: 19
   scenePathNames:
   - Assets/Scenes/PantallaPrincipal.unity
@@ -2077,4 +2096,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/Nivel2.unity
   - Assets/Scenes/YouWin.unity
   playerPath: C:/Users/Chris/Documents/GitHub/ProyectoTaller2/GravityGuy/Builds/GravityStrike
-    1.0/GravityGuy.exe
+    1.1/GravityGuy.exe
