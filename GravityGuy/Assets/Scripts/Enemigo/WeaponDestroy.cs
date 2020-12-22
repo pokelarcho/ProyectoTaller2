@@ -39,7 +39,7 @@ public class WeaponDestroy : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (collision.gameObject.CompareTag("Alien"))
         {
             destroy = true;
         }

@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Pause : MonoBehaviour
 {
@@ -12,7 +13,7 @@ public class Pause : MonoBehaviour
     public GameObject Lives;
     public AudioClip sfxPush;
     AudioSource ads;
-
+    public Button Boton;
 
     private void Start()
     {
@@ -45,7 +46,9 @@ public class Pause : MonoBehaviour
 
     void Pausa(){
       pauseMenuUI.SetActive(true);
-       //LivesUI.SetActive(false);
+        Boton.Select();
+        Boton.OnSelect(null);
+        //LivesUI.SetActive(false);
         Time.timeScale = 0f;
       GameIsPaused = true;
     }

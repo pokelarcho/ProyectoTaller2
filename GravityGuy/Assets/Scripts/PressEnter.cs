@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using PowerTools;
+
 
 public class PressEnter : MonoBehaviour
 {
@@ -31,6 +31,8 @@ public class PressEnter : MonoBehaviour
                 ads.PlayOneShot(sfxPush);
                 transition.SetTrigger("start");
                 Boton.enabled = true;
+                Boton.Select();
+                Boton.OnSelect(null);
                 gameObject1.SetActive(false);
                 gameObject2.SetActive(false);
 
