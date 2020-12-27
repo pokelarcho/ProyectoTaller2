@@ -99,15 +99,15 @@ public class PlayerMagnet : MonoBehaviour
             {
                 if (!magnetism)
                 {
-                    var emission = poleEffect.emission;
-                    emission.enabled = false;
+                    
                     DetPolo();
                     noreprod = false;
                     Repel();
                     hit = new RaycastHit2D();
                     hit2 = new RaycastHit2D();
                 }
-                
+                var emission = poleEffect.emission;
+                emission.enabled = false;
                 CoolActive = true;
                 Interface.instance.PoleEffector(CoolActive);
                 magnetAction = false;
@@ -342,14 +342,15 @@ public class PlayerMagnet : MonoBehaviour
 
     void RepelEffect()
     {
-        
-        if (direction==1)
-            Direccion.x = 1;
-        else
-            Direccion.x = -1;
+        var emission = poleEffect.emission;
+        emission.enabled = true;
+        /* if (direction==1)
+             Direccion.x = 1;
+         else
+             Direccion.x = -1;
 
-        Instantiate(Prefab, transform.position - Dife + centro, transform.rotation);
-        Prefab.GetComponent<MagnetBehaiviour>().direction = Direccion;
+         Instantiate(Prefab, transform.position - Dife + centro, transform.rotation);
+         Prefab.GetComponent<MagnetBehaiviour>().direction = Direccion;*/
     }
 
 

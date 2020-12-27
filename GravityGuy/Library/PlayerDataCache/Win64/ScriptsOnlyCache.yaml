@@ -2094,4 +2094,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/Nivel2.unity
   - Assets/Scenes/YouWin.unity
   playerPath: C:/Users/Chris/Documents/GitHub/ProyectoTaller2/GravityGuy/Builds/GravityStrike
-    1.1/GravityGuy.exe
+    1.2/GravityGuy.exe
